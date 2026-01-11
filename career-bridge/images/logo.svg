@@ -1,0 +1,26 @@
+<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+  <!-- 손 모양 -->
+  <path d="M 5 35 Q 5 25, 10 20 L 15 25 L 20 20 L 25 25 L 28 20 L 30 22 L 30 30 Q 30 38, 22 42 L 15 42 Q 7 40, 5 35 Z"
+        fill="#7BA882" stroke="#5D8C64" stroke-width="1.5"/>
+
+  <!-- 손가락들 -->
+  <ellipse cx="15" cy="24" rx="2" ry="5" fill="#7BA882" stroke="#5D8C64" stroke-width="1"/>
+  <ellipse cx="20" cy="19" rx="2" ry="6" fill="#7BA882" stroke="#5D8C64" stroke-width="1"/>
+  <ellipse cx="25" cy="23" rx="2" ry="5" fill="#7BA882" stroke="#5D8C64" stroke-width="1"/>
+  <ellipse cx="28.5" cy="19" rx="2" ry="4" fill="#7BA882" stroke="#5D8C64" stroke-width="1"/>
+
+  <!-- 큐브 (3D 박스) -->
+  <g transform="translate(25, 5)">
+    <!-- 윗면 -->
+    <polygon points="0,0 8,4 16,0 8,-4" fill="#A8D5BA" stroke="#7BA882" stroke-width="1.2"/>
+    <!-- 왼쪽면 -->
+    <polygon points="0,0 0,12 8,16 8,4" fill="#7BA882" stroke="#5D8C64" stroke-width="1.2"/>
+    <!-- 오른쪽면 -->
+    <polygon points="16,0 16,12 8,16 8,4" fill="#91C9A3" stroke="#6D9A74" stroke-width="1.2"/>
+
+    <!-- 큐브 위 작은 블록들 (성장 이미지) -->
+    <rect x="6" y="-8" width="2" height="4" fill="#C8E6C9" rx="0.5"/>
+    <rect x="9" y="-11" width="2" height="7" fill="#A8D5BA" rx="0.5"/>
+    <rect x="12" y="-9" width="2" height="5" fill="#91C9A3" rx="0.5"/>
+  </g>
+</svg>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티 - CareerBridge</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1><img src="images/logo.svg" alt="CareerBridge" class="logo-img"> CareerBridge</h1>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <a href="programs.html">체험 프로그램</a>
+                    <a href="companies.html">기업 정보</a>
+                    <a href="community.html" class="active">커뮤니티</a>
+                    <a href="support.html">고객센터</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-outline" onclick="location.href='login.html'">로그인</button>
+                    <button class="btn btn-primary" onclick="location.href='signup.html'">회원가입</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 브레드크럼 -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">홈</a> > <span>커뮤니티</span>
+        </div>
+    </div>
+
+    <!-- 커뮤니티 섹션 -->
+    <section class="community-section">
+        <div class="container">
+            <div class="page-header">
+                <h1>커뮤니티</h1>
+                <p>취업 준비생들의 정보 공유 공간</p>
+            </div>
+
+            <!-- 커뮤니티 탭 -->
+            <div class="community-tabs">
+                <button class="community-tab active" onclick="showCommunityTab('review', this)">
+                    📝 후기 게시판
+                    <span class="tab-count">(245)</span>
+                </button>
+                <button class="community-tab" onclick="showCommunityTab('qna', this)">
+                    💬 Q&A
+                    <span class="tab-count">(183)</span>
+                </button>
+                <button class="community-tab" onclick="showCommunityTab('tips', this)">
+                    💡 취업 팁
+                    <span class="tab-count">(127)</span>
+                </button>
+                <button class="community-tab" onclick="showCommunityTab('free', this)">
+                    🗨️ 자유게시판
+                    <span class="tab-count">(512)</span>
+                </button>
+            </div>
+
+            <!-- 검색 및 작성 -->
+            <div class="community-header">
+                <div class="search-write-box">
+                    <div class="search-box-small">
+                        <input type="text" placeholder="게시글 검색" class="search-input-small">
+                        <button class="btn-search-small">🔍</button>
+                    </div>
+                    <button class="btn btn-primary" onclick="location.href='community-write.html'">✍️ 글쓰기</button>
+                </div>
+            </div>
+
+            <!-- 후기 게시판 -->
+            <div id="review" class="community-content active">
+                <div class="post-list">
+                    <!-- 게시글 1 -->
+                    <div class="post-item">
+                        <div class="post-header">
+                            <div class="post-title-box">
+                                <div class="post-title">
+                                    [카카오모빌리티] 서비스 기획 1일 체험 후기
+                                    <div class="post-badges">
+                                        <span class="badge badge-hot">HOT</span>
+                                    </div>
+                                </div>
+                                <p class="post-excerpt">
+                                    정말 유익한 프로그램이었습니다! 실제 PM들과 함께 기획 회의를 하고,
+                                    미니 프로젝트까지 진행하면서 실무 경험을 쌓을 수 있었어요...
+                                </p>
+                            </div>
+                        </div>
+                        <div class="post-meta">
+                            <span>👤 김OO</span>
+                            <span>📅 2026.01.10</span>
+                            <span>👁 842</span>
+                            <span>❤️ 127</span>
+                            <span>💬 23</span>
+                        </div>
+                    </div>
+
+                    <!-- 게시글 2 -->
+                    <div class="post-item">
+                        <div class="post-header">
+                            <div class="post-title-box">
+                                <div class="post-title">
+                                    [네이버] AI 연구 인턴 체험 솔직 후기
+                                </div>
+                                <p class="post-excerpt">
+                                    최신 AI 기술을 직접 보고 배울 수 있는 기회였어요.
+                                    현직 연구원분들의 친절한 설명 덕분에 많이 배웠습니다...
+                                </p>
+                            </div>
+                        </div>
+                        <div class="post-meta">
+                            <span>👤 이OO</span>
+                            <span>📅 2026.01.09</span>
+                            <span>👁 623</span>
+                            <span>❤️ 89</span>
+                            <span>💬 15</span>
+                        </div>
+                    </div>
+
+                    <!-- 게시글 3 -->
+                    <div class="post-item">
+                        <div class="post-header">
+                            <div class="post-title-box">
+                                <div class="post-title">
+                                    [토스] UX 디자인 체험 프로그램 후기
+                                    <div class="post-badges">
+                                        <span class="badge badge-new">NEW</span>
+                                    </div>
+                                </div>
+                                <p class="post-excerpt">
+                                    실제 금융 서비스의 UX를 개선하는 프로젝트를 해봤는데,
+                                    디자이너분들의 피드백이 정말 도움이 많이 되었어요...
+                                </p>
+                            </div>
+                        </div>
+                        <div class="post-meta">
+                            <span>👤 박OO</span>
+                            <span>📅 2026.01.08</span>
+                            <span>👁 445</span>
+                            <span>❤️ 67</span>
+                            <span>💬 12</span>
+                        </div>
+                    </div>
+
+                    <!-- 게시글 4 -->
+                    <div class="post-item">
+                        <div class="post-header">
+                            <div class="post-title-box">
+                                <div class="post-title">
+                                    [쿠팡] 물류 시스템 운영 2일 체험 후기
+                                </div>
+                                <p class="post-excerpt">
+                                    대규모 물류 시스템이 어떻게 돌아가는지 직접 볼 수 있었어요.
+                                    효율화 제안까지 할 수 있어서 뿌듯했습니다...
+                                </p>
+                            </div>
+                        </div>
+                        <div class="post-meta">
+                            <span>👤 최OO</span>
+                            <span>📅 2026.01.07</span>
+                            <span>👁 378</span>
+                            <span>❤️ 54</span>
+                            <span>💬 9</span>
+                        </div>
+                    </div>
+
+                    <!-- 게시글 5 -->
+                    <div class="post-item">
+                        <div class="post-header">
+                            <div class="post-title-box">
+                                <div class="post-title">
+                                    [당근마켓] 서비스 기획 체험 참여 후기
+                                </div>
+                                <p class="post-excerpt">
+                                    지역 기반 서비스의 특성을 이해하고, 실제 기획 프로세스를
+                                    경험할 수 있어서 좋았습니다. 인턴 제안도 받았어요!...
+                                </p>
+                            </div>
+                        </div>
+                        <div class="post-meta">
+                            <span>👤 정OO</span>
+                            <span>📅 2026.01.06</span>
+                            <span>👁 512</span>
+                            <span>❤️ 78</span>
+                            <span>💬 18</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q&A 게시판 -->
+            <div id="qna" class="community-content">
+                <div class="qna-notice">
+                    <h4>⭐ Q&A 이용 안내</h4>
+                    <p>• 질문 작성 시 별 5개가 차감됩니다</p>
+                    <p>• 7일 이내 기업 답변이 없으면 별을 환불하고 글이 삭제됩니다</p>
+                    <p>• 보유 별: <strong id="userStars">100</strong>개 | <a href="points.html">포인트 충전하기 →</a></p>
+                </div>
+
+                <div class="post-list">
+                    <div class="post-item">
+                        <div class="post-header">
+                            <div class="post-title-box">
+                                <div class="post-title">
+                                    [카카오모빌리티] 인턴십 전환 프로세스가 궁금합니다
+                                    <div class="post-badges">
+                                        <span class="badge badge-answered">답변완료</span>
+                                    </div>
+                                </div>
+                                <p class="post-excerpt">
+                                    체험 프로그램 참여 후 인턴십으로 전환되는 구체적인 절차가 궁금합니다.
+                                    평가 기준은 어떻게 되나요?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="post-meta">
+                            <span>👤 김OO</span>
+                            <span>📅 2026.01.08</span>
+                            <span>⭐ 5개 사용</span>
+                            <span style="color: var(--primary-color); font-weight: 600;">✅ 기업 답변 완료</span>
+                        </div>
+                    </div>
+
+                    <div class="post-item">
+                        <div class="post-header">
+                            <div class="post-title-box">
+                                <div class="post-title">
+                                    [네이버] 개발 직무 지원 시 포트폴리오 필수인가요?
+                                    <div class="post-badges">
+                                        <span class="badge badge-waiting">대기중</span>
+                                    </div>
+                                </div>
+                                <p class="post-excerpt">
+                                    체험 프로그램 신청할 때 포트폴리오가 필수인지 궁금합니다.
+                                    준비하지 못했는데 괜찮을까요?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="post-meta">
+                            <span>👤 이OO</span>
+                            <span>📅 2026.01.10</span>
+                            <span>⭐ 5개 사용</span>
+                            <span style="color: #FFA726; font-weight: 600;">⏳ 답변 대기 (5일 남음)</span>
+                        </div>
+                    </div>
+
+                    <div class="post-item">
+                        <div class="post-header">
+                            <div class="post-title-box">
+                                <div class="post-title">
+                                    [토스] 디자인 직무 체험 프로그램 준비물은?
+                                    <div class="post-badges">
+                                        <span class="badge badge-answered">답변완료</span>
+                                    </div>
+                                </div>
+                                <p class="post-excerpt">
+                                    UX 디자인 체험 프로그램에 참여하려고 합니다. 노트북이나 특별한 준비물이 필요한가요?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="post-meta">
+                            <span>👤 박OO</span>
+                            <span>📅 2026.01.09</span>
+                            <span>⭐ 5개 사용</span>
+                            <span style="color: var(--primary-color); font-weight: 600;">✅ 기업 답변 완료</span>
+                        </div>
+                    </div>
+
+                    <div class="post-item">
+                        <div class="post-header">
+                            <div class="post-title-box">
+                                <div class="post-title">
+                                    [쿠팡] 물류 센터 방문 시 복장은?
+                                    <div class="post-badges">
+                                        <span class="badge badge-waiting">대기중</span>
+                                    </div>
+                                </div>
+                                <p class="post-excerpt">
+                                    2일간 물류 센터에서 체험하는데 편한 복장으로 가도 되나요? 안전화는 제공되나요?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="post-meta">
+                            <span>👤 최OO</span>
+                            <span>📅 2026.01.11</span>
+                            <span>⭐ 5개 사용</span>
+                            <span style="color: #FFA726; font-weight: 600;">⏳ 답변 대기 (6일 남음)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 페이지네이션 -->
+            <div class="pagination">
+                <button class="pagination-btn">‹</button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn">4</button>
+                <button class="pagination-btn">5</button>
+                <button class="pagination-btn">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌉 CareerBridge</h3>
+                    <p>직장 생활, 미리 경험해보세요</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul>
+                        <li><a href="programs.html">체험 프로그램</a></li>
+                        <li><a href="companies.html">기업 정보</a></li>
+                        <li><a href="community.html">커뮤니티</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="support.html">공지사항</a></li>
+                        <li><a href="support.html">FAQ</a></li>
+                        <li><a href="support.html">1:1 문의</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>회사 정보</h4>
+                    <p>대표: OOO<br>
+                    이메일: contact@careerbridge.com<br>
+                    전화: 02-1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CareerBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function showCommunityTab(tabId, button) {
+            // 모든 탭 비활성화
+            document.querySelectorAll('.community-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            button.classList.add('active');
+
+            // 모든 컨텐츠 숨기기
+            document.querySelectorAll('.community-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // 선택한 컨텐츠 표시
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // 로그인 후 사용자의 별 개수 표시 (데모)
+        document.addEventListener('DOMContentLoaded', function() {
+            // 실제로는 서버에서 가져와야 함
+            document.getElementById('userStars').textContent = '100';
+        });
+    </script>
+</body>
+</html>

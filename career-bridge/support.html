@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객센터 - CareerBridge</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1><img src="images/logo.svg" alt="CareerBridge" class="logo-img"> CareerBridge</h1>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <a href="programs.html">체험 프로그램</a>
+                    <a href="companies.html">기업 정보</a>
+                    <a href="community.html">커뮤니티</a>
+                    <a href="support.html" class="active">고객센터</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-outline" onclick="location.href='login.html'">로그인</button>
+                    <button class="btn btn-primary" onclick="location.href='signup.html'">회원가입</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 브레드크럼 -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">홈</a> > <span>고객센터</span>
+        </div>
+    </div>
+
+    <!-- 고객센터 섹션 -->
+    <section class="support-section">
+        <div class="container">
+            <div class="page-header">
+                <h1>고객센터</h1>
+                <p>무엇을 도와드릴까요?</p>
+            </div>
+
+            <!-- 빠른 도움말 -->
+            <div class="quick-help">
+                <div class="quick-help-card" onclick="location.href='#faq'">
+                    <div class="quick-icon">❓</div>
+                    <h3>자주 묻는 질문</h3>
+                    <p>FAQ를 확인하세요</p>
+                </div>
+                <div class="quick-help-card" onclick="location.href='#notice'">
+                    <div class="quick-icon">📢</div>
+                    <h3>공지사항</h3>
+                    <p>새로운 소식을 확인하세요</p>
+                </div>
+                <div class="quick-help-card" onclick="location.href='#contact'">
+                    <div class="quick-icon">✉️</div>
+                    <h3>1:1 문의</h3>
+                    <p>직접 문의하세요</p>
+                </div>
+                <div class="quick-help-card" onclick="location.href='points.html'">
+                    <div class="quick-icon">⭐</div>
+                    <h3>포인트 충전</h3>
+                    <p>별 포인트 구매</p>
+                </div>
+            </div>
+
+            <!-- FAQ 섹션 -->
+            <div id="faq" class="support-content-section">
+                <h2 class="section-title">❓ 자주 묻는 질문 (FAQ)</h2>
+
+                <div class="faq-categories">
+                    <button class="faq-category active" onclick="filterFAQ('all', this)">전체</button>
+                    <button class="faq-category" onclick="filterFAQ('program', this)">프로그램</button>
+                    <button class="faq-category" onclick="filterFAQ('apply', this)">신청/결제</button>
+                    <button class="faq-category" onclick="filterFAQ('points', this)">포인트</button>
+                    <button class="faq-category" onclick="filterFAQ('etc', this)">기타</button>
+                </div>
+
+                <div class="faq-list">
+                    <div class="faq-item" data-category="program">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Q. 체험 프로그램은 어떻게 신청하나요?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>1. 원하는 프로그램을 선택하세요<br>
+                            2. 상세 페이지에서 '신청하기' 버튼을 클릭하세요<br>
+                            3. 신청서를 작성하고 제출하세요<br>
+                            4. 2-3일 내로 승인 결과를 이메일로 받으실 수 있습니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="program">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Q. 인턴십 전환은 어떻게 이루어지나요?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>프로그램 참여 후 현직자들의 평가를 통해 우수 참가자를 선발합니다.
+                            선발되신 분들께는 개별적으로 인턴십 제안을 드리며,
+                            인턴십 기간 동안의 성과에 따라 정규직 전환 여부가 결정됩니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="points">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Q. 별 포인트는 어떻게 사용하나요?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>별 포인트는 Q&A 게시판에서 기업에게 질문할 때 사용됩니다.
+                            질문 1개당 별 5개가 차감되며, 7일 이내 기업 답변이 없으면
+                            별을 환불받으실 수 있습니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="points">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Q. 포인트 충전은 어떻게 하나요?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>고객센터 > 포인트 충전 페이지에서 충전하실 수 있습니다.
+                            10,000원당 별 100개가 지급되며, 신용카드, 계좌이체, 간편결제를 지원합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="apply">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Q. 프로그램 신청을 취소할 수 있나요?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>프로그램 시작 3일 전까지는 마이페이지에서 취소하실 수 있습니다.
+                            3일 이내에는 취소가 불가능하니 신중하게 신청해주세요.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="etc">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Q. 참여 인증서는 어떻게 받나요?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>프로그램 참여 완료 후 마이페이지 > 인증서 메뉴에서
+                            PDF 파일로 다운로드하실 수 있습니다. 이력서 작성 시 활용하세요!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 공지사항 섹션 -->
+            <div id="notice" class="support-content-section">
+                <h2 class="section-title">📢 공지사항</h2>
+
+                <div class="notice-list">
+                    <div class="notice-item">
+                        <div class="notice-badge important">중요</div>
+                        <div class="notice-content">
+                            <h3>[공지] 2026년 설 연휴 고객센터 운영 안내</h3>
+                            <p class="notice-date">2026.01.10</p>
+                        </div>
+                    </div>
+
+                    <div class="notice-item">
+                        <div class="notice-badge new">NEW</div>
+                        <div class="notice-content">
+                            <h3>[이벤트] 신규 회원 가입 이벤트 - 별 20개 무료 증정!</h3>
+                            <p class="notice-date">2026.01.08</p>
+                        </div>
+                    </div>
+
+                    <div class="notice-item">
+                        <div class="notice-content">
+                            <h3>[안내] 포인트 시스템 도입 안내</h3>
+                            <p class="notice-date">2026.01.05</p>
+                        </div>
+                    </div>
+
+                    <div class="notice-item">
+                        <div class="notice-content">
+                            <h3>[업데이트] 모바일 앱 출시 예정</h3>
+                            <p class="notice-date">2026.01.03</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1:1 문의 섹션 -->
+            <div id="contact" class="support-content-section">
+                <h2 class="section-title">✉️ 1:1 문의</h2>
+
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <div class="contact-icon">📧</div>
+                        <h3>이메일 문의</h3>
+                        <p>contact@careerbridge.com</p>
+                        <p class="contact-time">24시간 접수 가능 (평일 09:00-18:00 답변)</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">📞</div>
+                        <h3>전화 문의</h3>
+                        <p>02-1234-5678</p>
+                        <p class="contact-time">평일 09:00-18:00 (점심시간 12:00-13:00)</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">💬</div>
+                        <h3>카카오톡 문의</h3>
+                        <p>@CareerBridge</p>
+                        <p class="contact-time">평일 09:00-18:00</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <h3>문의하기</h3>
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>이름 *</label>
+                                <input type="text" class="form-input" placeholder="홍길동" required>
+                            </div>
+                            <div class="form-group">
+                                <label>이메일 *</label>
+                                <input type="email" class="form-input" placeholder="example@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>문의 유형 *</label>
+                            <select class="form-select" required>
+                                <option value="">선택하세요</option>
+                                <option>프로그램 관련</option>
+                                <option>결제 관련</option>
+                                <option>포인트 관련</option>
+                                <option>기술적 문제</option>
+                                <option>기타</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>제목 *</label>
+                            <input type="text" class="form-input" placeholder="문의 제목을 입력하세요" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>문의 내용 *</label>
+                            <textarea class="form-textarea" rows="6" placeholder="문의 내용을 상세히 작성해주세요" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">문의하기</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌉 CareerBridge</h3>
+                    <p>직장 생활, 미리 경험해보세요</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul>
+                        <li><a href="programs.html">체험 프로그램</a></li>
+                        <li><a href="companies.html">기업 정보</a></li>
+                        <li><a href="community.html">커뮤니티</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="support.html">공지사항</a></li>
+                        <li><a href="support.html">FAQ</a></li>
+                        <li><a href="support.html">1:1 문의</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>회사 정보</h4>
+                    <p>대표: OOO<br>
+                    이메일: contact@careerbridge.com<br>
+                    전화: 02-1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CareerBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function filterFAQ(category, button) {
+            // 모든 카테고리 버튼 비활성화
+            document.querySelectorAll('.faq-category').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            button.classList.add('active');
+
+            // FAQ 아이템 필터링
+            const items = document.querySelectorAll('.faq-item');
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+
+            const icon = element.querySelector('.faq-icon');
+            if (faqItem.classList.contains('active')) {
+                icon.textContent = '▲';
+            } else {
+                icon.textContent = '▼';
+            }
+        }
+    </script>
+</body>
+</html>

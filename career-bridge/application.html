@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로그램 신청 - CareerBridge</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1><img src="images/logo.png" alt="CareerBridge" class="logo-img"> CareerBridge</h1>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <a href="programs.html">체험 프로그램</a>
+                    <a href="companies.html">기업 정보</a>
+                    <a href="community.html">커뮤니티</a>
+                    <a href="support.html">고객센터</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-outline" onclick="location.href='login.html'">로그인</button>
+                    <button class="btn btn-primary" onclick="location.href='signup.html'">회원가입</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 브레드크럼 -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">홈</a> >
+            <a href="programs.html">체험 프로그램</a> >
+            <a href="program-detail.html">프로그램 상세</a> >
+            <span>신청하기</span>
+        </div>
+    </div>
+
+    <!-- 신청 폼 섹션 -->
+    <section class="application-section">
+        <div class="container">
+            <div class="application-layout">
+                <!-- 왼쪽: 신청 폼 -->
+                <div class="application-form-wrapper">
+                    <div class="form-header">
+                        <h1>[카카오모빌리티] 서비스 기획 1일 체험</h1>
+                        <p class="form-subtitle">프로그램 참여를 위해 아래 정보를 입력해주세요</p>
+                    </div>
+
+                    <form id="applicationForm" class="application-form">
+                        <!-- 기본 정보 -->
+                        <div class="form-section">
+                            <h2 class="form-section-title">📋 기본 정보</h2>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name" class="form-label required">이름</label>
+                                    <input type="text" id="name" name="name" class="form-input" placeholder="홍길동" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="birthDate" class="form-label required">생년월일</label>
+                                    <input type="date" id="birthDate" name="birthDate" class="form-input" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email" class="form-label required">이메일</label>
+                                    <input type="email" id="email" name="email" class="form-input" placeholder="example@email.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="form-label required">전화번호</label>
+                                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="010-1234-5678" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 학력 및 경력 -->
+                        <div class="form-section">
+                            <h2 class="form-section-title">🎓 학력 및 경력</h2>
+
+                            <div class="form-group">
+                                <label for="education" class="form-label required">최종 학력</label>
+                                <select id="education" name="education" class="form-select" required>
+                                    <option value="">선택하세요</option>
+                                    <option value="고졸">고등학교 졸업</option>
+                                    <option value="전문대재학">전문대학 재학</option>
+                                    <option value="전문대졸">전문대학 졸업</option>
+                                    <option value="대학재학">대학교 재학</option>
+                                    <option value="대학졸">대학교 졸업</option>
+                                    <option value="석사">석사 과정</option>
+                                    <option value="박사">박사 과정</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="school" class="form-label required">학교명</label>
+                                <input type="text" id="school" name="school" class="form-input" placeholder="OO대학교" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="major" class="form-label required">전공</label>
+                                <input type="text" id="major" name="major" class="form-input" placeholder="컴퓨터공학과" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="experience" class="form-label">관련 경험 (인턴, 프로젝트 등)</label>
+                                <textarea id="experience" name="experience" class="form-textarea" rows="4" placeholder="관련 경험이 있다면 자유롭게 작성해주세요 (선택사항)"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- 지원 동기 -->
+                        <div class="form-section">
+                            <h2 class="form-section-title">💬 지원 동기</h2>
+
+                            <div class="form-group">
+                                <label for="motivation" class="form-label required">이 프로그램에 지원한 이유를 알려주세요</label>
+                                <textarea id="motivation" name="motivation" class="form-textarea" rows="6" placeholder="프로그램에 지원하게 된 동기와 기대하는 점을 구체적으로 작성해주세요 (최소 100자)" required></textarea>
+                                <div class="char-counter">
+                                    <span id="charCount">0</span> / 500자
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">서비스 기획에 관심을 갖게 된 계기는 무엇인가요?</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="interest" value="전공" required>
+                                        <span>전공 관련</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="interest" value="프로젝트">
+                                        <span>프로젝트 경험</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="interest" value="개인관심">
+                                        <span>개인적 관심</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="interest" value="취업준비">
+                                        <span>취업 준비</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 포트폴리오 -->
+                        <div class="form-section">
+                            <h2 class="form-section-title">📂 포트폴리오 및 자료</h2>
+
+                            <div class="form-group">
+                                <label for="portfolio" class="form-label">포트폴리오 첨부 (선택)</label>
+                                <div class="file-upload-wrapper">
+                                    <input type="file" id="portfolio" name="portfolio" class="file-input" accept=".pdf,.doc,.docx,.ppt,.pptx">
+                                    <label for="portfolio" class="file-upload-label">
+                                        <span class="file-icon">📎</span>
+                                        <span class="file-text" id="fileName">파일을 선택하거나 드래그하세요</span>
+                                    </label>
+                                    <p class="file-info">PDF, DOC, PPT 파일 (최대 10MB)</p>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="portfolioLink" class="form-label">포트폴리오 링크 (선택)</label>
+                                <input type="url" id="portfolioLink" name="portfolioLink" class="form-input" placeholder="https://...">
+                            </div>
+                        </div>
+
+                        <!-- 추가 정보 -->
+                        <div class="form-section">
+                            <h2 class="form-section-title">ℹ️ 추가 정보</h2>
+
+                            <div class="form-group">
+                                <label for="dietary" class="form-label">식이 제한 사항 (점심 제공)</label>
+                                <input type="text" id="dietary" name="dietary" class="form-input" placeholder="채식, 알레르기 등 (선택사항)">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="questions" class="form-label">궁금한 점이나 요청 사항</label>
+                                <textarea id="questions" name="questions" class="form-textarea" rows="3" placeholder="프로그램에 대해 궁금한 점이나 특별히 요청하실 사항이 있다면 작성해주세요"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- 약관 동의 -->
+                        <div class="form-section">
+                            <h2 class="form-section-title">✅ 약관 동의</h2>
+
+                            <div class="agreement-box">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="agreeAll" id="agreeAll">
+                                    <span class="checkbox-text bold">전체 동의</span>
+                                </label>
+                                <hr class="divider">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="agreeTerms" class="agree-item" required>
+                                    <span class="checkbox-text">(필수) 이용약관 동의</span>
+                                    <a href="#" class="agreement-link">보기</a>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="agreePrivacy" class="agree-item" required>
+                                    <span class="checkbox-text">(필수) 개인정보 수집 및 이용 동의</span>
+                                    <a href="#" class="agreement-link">보기</a>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="agreeMarketing" class="agree-item">
+                                    <span class="checkbox-text">(선택) 마케팅 정보 수신 동의</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 제출 버튼 -->
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline btn-large" onclick="history.back()">취소</button>
+                            <button type="submit" class="btn btn-primary btn-large">신청 완료</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 오른쪽: 프로그램 요약 -->
+                <aside class="application-sidebar">
+                    <div class="program-summary sticky">
+                        <h3 class="summary-title">📌 프로그램 요약</h3>
+
+                        <div class="summary-item">
+                            <div class="summary-label">프로그램명</div>
+                            <div class="summary-value">[카카오모빌리티] 서비스 기획 1일 체험</div>
+                        </div>
+
+                        <div class="summary-item">
+                            <div class="summary-label">일정</div>
+                            <div class="summary-value">2026.02.15 (토)</div>
+                        </div>
+
+                        <div class="summary-item">
+                            <div class="summary-label">시간</div>
+                            <div class="summary-value">10:00 - 17:00</div>
+                        </div>
+
+                        <div class="summary-item">
+                            <div class="summary-label">장소</div>
+                            <div class="summary-value">판교역 5분 거리</div>
+                        </div>
+
+                        <div class="summary-item">
+                            <div class="summary-label">참가비</div>
+                            <div class="summary-value highlight">무료 (점심 제공)</div>
+                        </div>
+
+                        <div class="summary-item">
+                            <div class="summary-label">모집인원</div>
+                            <div class="summary-value">5 / 20명</div>
+                        </div>
+
+                        <hr class="summary-divider">
+
+                        <div class="summary-notice">
+                            <h4>📢 안내사항</h4>
+                            <ul>
+                                <li>신청 후 승인까지 2-3일 소요</li>
+                                <li>이메일로 승인 결과 발송</li>
+                                <li>마감 시 대기자 명단 등록</li>
+                                <li>취소 시 최소 3일 전 연락</li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- 성공 모달 -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">✅</div>
+            <h2>신청이 완료되었습니다!</h2>
+            <p>입력하신 이메일로 신청 확인 메일을 발송했습니다.<br>
+            승인 결과는 2-3일 내에 안내드리겠습니다.</p>
+            <div class="modal-actions">
+                <button class="btn btn-outline" onclick="location.href='programs.html'">프로그램 목록</button>
+                <button class="btn btn-primary" onclick="location.href='mypage.html'">마이페이지</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌉 CareerBridge</h3>
+                    <p>직장 생활, 미리 경험해보세요</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul>
+                        <li><a href="programs.html">체험 프로그램</a></li>
+                        <li><a href="#">기업 정보</a></li>
+                        <li><a href="#">커뮤니티</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">1:1 문의</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>회사 정보</h4>
+                    <p>대표: OOO<br>
+                    이메일: contact@careerbridge.com<br>
+                    전화: 02-1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CareerBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/application.js"></script>
+</body>
+</html>
