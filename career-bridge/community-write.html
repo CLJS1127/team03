@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글쓰기 - CareerBridge</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1><img src="images/logo.svg" alt="CareerBridge" class="logo-img"> CareerBridge</h1>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <a href="programs.html">체험 프로그램</a>
+                    <a href="companies.html">기업 정보</a>
+                    <a href="community.html" class="active">커뮤니티</a>
+                    <a href="support.html">고객센터</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-outline" onclick="location.href='login.html'">로그인</button>
+                    <button class="btn btn-primary" onclick="location.href='signup.html'">회원가입</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 브레드크럼 -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">홈</a> > <a href="community.html">커뮤니티</a> > <span>글쓰기</span>
+        </div>
+    </div>
+
+    <!-- 글쓰기 섹션 -->
+    <section class="write-section">
+        <div class="container">
+            <div class="write-container">
+                <div class="write-header">
+                    <h1>✍️ 글쓰기</h1>
+                    <p>다른 사용자들과 경험을 공유해보세요</p>
+                </div>
+
+                <form class="write-form" onsubmit="handleSubmit(event)">
+                    <!-- 게시판 선택 -->
+                    <div class="form-group">
+                        <label>게시판 선택 <span class="required">*</span></label>
+                        <div class="board-select-grid">
+                            <label class="board-option">
+                                <input type="radio" name="board" value="review" checked>
+                                <div class="board-card">
+                                    <div class="board-icon">📝</div>
+                                    <div class="board-name">후기 게시판</div>
+                                    <div class="board-desc">프로그램 체험 후기</div>
+                                </div>
+                            </label>
+                            <label class="board-option">
+                                <input type="radio" name="board" value="qna">
+                                <div class="board-card qna">
+                                    <div class="board-icon">💬</div>
+                                    <div class="board-name">Q&A</div>
+                                    <div class="board-desc">기업에 직접 질문 (별 5개)</div>
+                                </div>
+                            </label>
+                            <label class="board-option">
+                                <input type="radio" name="board" value="tips">
+                                <div class="board-card">
+                                    <div class="board-icon">💡</div>
+                                    <div class="board-name">취업 팁</div>
+                                    <div class="board-desc">취업 준비 노하우</div>
+                                </div>
+                            </label>
+                            <label class="board-option">
+                                <input type="radio" name="board" value="free">
+                                <div class="board-card">
+                                    <div class="board-icon">🗨️</div>
+                                    <div class="board-name">자유게시판</div>
+                                    <div class="board-desc">자유로운 이야기</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q&A 안내 -->
+                    <div class="qna-notice-write" id="qnaNotice" style="display: none;">
+                        <div class="notice-icon">⚠️</div>
+                        <div class="notice-content">
+                            <h4>Q&A 게시판 이용 안내</h4>
+                            <p>• 질문 작성 시 <strong>별 5개</strong>가 차감됩니다</p>
+                            <p>• 7일 이내 기업 답변이 없으면 별을 환불하고 글이 삭제됩니다</p>
+                            <p>• 현재 보유 별: <strong id="currentStars">100</strong>개</p>
+                        </div>
+                    </div>
+
+                    <!-- 제목 -->
+                    <div class="form-group">
+                        <label for="title">제목 <span class="required">*</span></label>
+                        <input
+                            type="text"
+                            id="title"
+                            class="form-input"
+                            placeholder="제목을 입력하세요 (최대 100자)"
+                            maxlength="100"
+                            required
+                        >
+                        <div class="input-help">
+                            <span class="char-count"><span id="titleCount">0</span>/100</span>
+                        </div>
+                    </div>
+
+                    <!-- 기업 선택 (Q&A용) -->
+                    <div class="form-group" id="companySelect" style="display: none;">
+                        <label for="company">질문할 기업 <span class="required">*</span></label>
+                        <select id="company" class="form-select">
+                            <option value="">기업을 선택하세요</option>
+                            <option value="kakao">카카오모빌리티</option>
+                            <option value="naver">네이버</option>
+                            <option value="baemin">배달의민족</option>
+                            <option value="coupang">쿠팡</option>
+                            <option value="toss">토스</option>
+                            <option value="line">라인</option>
+                            <option value="danggeun">당근마켓</option>
+                            <option value="yanolja">야놀자</option>
+                        </select>
+                    </div>
+
+                    <!-- 내용 -->
+                    <div class="form-group">
+                        <label for="content">내용 <span class="required">*</span></label>
+                        <div class="editor-toolbar">
+                            <button type="button" class="toolbar-btn" onclick="formatText('bold')"><strong>B</strong></button>
+                            <button type="button" class="toolbar-btn" onclick="formatText('italic')"><em>I</em></button>
+                            <button type="button" class="toolbar-btn" onclick="formatText('underline')"><u>U</u></button>
+                            <div class="toolbar-divider"></div>
+                            <button type="button" class="toolbar-btn" onclick="insertList()">• 목록</button>
+                            <button type="button" class="toolbar-btn" onclick="insertLink()">🔗 링크</button>
+                        </div>
+                        <textarea
+                            id="content"
+                            class="form-textarea"
+                            placeholder="내용을 입력하세요&#10;&#10;• 상세한 내용일수록 좋은 답변을 받을 수 있습니다&#10;• 예의를 지켜주세요&#10;• 개인정보는 입력하지 마세요"
+                            rows="15"
+                            required
+                        ></textarea>
+                        <div class="input-help">
+                            <span class="char-count"><span id="contentCount">0</span>자</span>
+                        </div>
+                    </div>
+
+                    <!-- 태그 -->
+                    <div class="form-group">
+                        <label for="tags">태그 (선택)</label>
+                        <div class="tags-input-container">
+                            <div class="tags-display" id="tagsDisplay"></div>
+                            <input
+                                type="text"
+                                id="tags"
+                                class="tags-input"
+                                placeholder="태그 입력 후 Enter (최대 5개)"
+                                onkeypress="addTag(event)"
+                            >
+                        </div>
+                        <div class="input-help">
+                            <span>예: 면접, 자소서, 포트폴리오</span>
+                        </div>
+                    </div>
+
+                    <!-- 첨부파일 -->
+                    <div class="form-group">
+                        <label for="files">첨부파일 (선택)</label>
+                        <div class="file-upload-area" onclick="document.getElementById('files').click()">
+                            <div class="file-upload-icon">📎</div>
+                            <div class="file-upload-text">
+                                <p>클릭하여 파일을 선택하거나 드래그하여 업로드</p>
+                                <span>이미지, 문서 파일 (최대 10MB)</span>
+                            </div>
+                            <input type="file" id="files" multiple accept="image/*,.pdf,.doc,.docx" style="display: none;" onchange="handleFileSelect(event)">
+                        </div>
+                        <div class="file-list" id="fileList"></div>
+                    </div>
+
+                    <!-- 공개 설정 -->
+                    <div class="form-group">
+                        <label>공개 설정</label>
+                        <div class="privacy-options">
+                            <label class="privacy-option">
+                                <input type="radio" name="privacy" value="public" checked>
+                                <div class="privacy-card">
+                                    <div class="privacy-icon">🌍</div>
+                                    <div class="privacy-info">
+                                        <div class="privacy-name">전체 공개</div>
+                                        <div class="privacy-desc">모든 사용자가 볼 수 있습니다</div>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="privacy-option">
+                                <input type="radio" name="privacy" value="members">
+                                <div class="privacy-card">
+                                    <div class="privacy-icon">👥</div>
+                                    <div class="privacy-info">
+                                        <div class="privacy-name">회원 공개</div>
+                                        <div class="privacy-desc">로그인한 회원만 볼 수 있습니다</div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 버튼 -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline btn-large" onclick="history.back()">취소</button>
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span id="submitText">등록하기</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌉 CareerBridge</h3>
+                    <p>직장 생활, 미리 경험해보세요</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul>
+                        <li><a href="programs.html">체험 프로그램</a></li>
+                        <li><a href="companies.html">기업 정보</a></li>
+                        <li><a href="community.html">커뮤니티</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="support.html">공지사항</a></li>
+                        <li><a href="support.html">FAQ</a></li>
+                        <li><a href="support.html">1:1 문의</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>회사 정보</h4>
+                    <p>대표: OOO<br>
+                    이메일: contact@careerbridge.com<br>
+                    전화: 02-1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CareerBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // 게시판 선택 시 UI 변경
+        document.querySelectorAll('input[name="board"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const qnaNotice = document.getElementById('qnaNotice');
+                const companySelect = document.getElementById('companySelect');
+                const submitText = document.getElementById('submitText');
+
+                if (this.value === 'qna') {
+                    qnaNotice.style.display = 'flex';
+                    companySelect.style.display = 'block';
+                    submitText.textContent = '질문하기 (별 5개 사용)';
+                } else {
+                    qnaNotice.style.display = 'none';
+                    companySelect.style.display = 'none';
+                    submitText.textContent = '등록하기';
+                }
+            });
+        });
+
+        // 제목 글자 수 카운터
+        document.getElementById('title').addEventListener('input', function() {
+            document.getElementById('titleCount').textContent = this.value.length;
+        });
+
+        // 내용 글자 수 카운터
+        document.getElementById('content').addEventListener('input', function() {
+            document.getElementById('contentCount').textContent = this.value.length;
+        });
+
+        // 태그 추가
+        let tags = [];
+        function addTag(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                const input = event.target;
+                const tag = input.value.trim();
+
+                if (tag && tags.length < 5 && !tags.includes(tag)) {
+                    tags.push(tag);
+                    renderTags();
+                    input.value = '';
+                }
+            }
+        }
+
+        function removeTag(tag) {
+            tags = tags.filter(t => t !== tag);
+            renderTags();
+        }
+
+        function renderTags() {
+            const display = document.getElementById('tagsDisplay');
+            display.innerHTML = tags.map(tag =>
+                `<span class="tag-item">
+                    ${tag}
+                    <button type="button" class="tag-remove" onclick="removeTag('${tag}')">×</button>
+                </span>`
+            ).join('');
+        }
+
+        // 파일 선택
+        let selectedFiles = [];
+        function handleFileSelect(event) {
+            const files = Array.from(event.target.files);
+            selectedFiles = [...selectedFiles, ...files].slice(0, 5); // 최대 5개
+            renderFileList();
+        }
+
+        function removeFile(index) {
+            selectedFiles.splice(index, 1);
+            renderFileList();
+        }
+
+        function renderFileList() {
+            const fileList = document.getElementById('fileList');
+            if (selectedFiles.length === 0) {
+                fileList.innerHTML = '';
+                return;
+            }
+
+            fileList.innerHTML = selectedFiles.map((file, index) =>
+                `<div class="file-item">
+                    <div class="file-info">
+                        <span class="file-icon">📄</span>
+                        <span class="file-name">${file.name}</span>
+                        <span class="file-size">(${(file.size / 1024).toFixed(1)}KB)</span>
+                    </div>
+                    <button type="button" class="file-remove" onclick="removeFile(${index})">×</button>
+                </div>`
+            ).join('');
+        }
+
+        // 폼 제출
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const board = document.querySelector('input[name="board"]:checked').value;
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+            const company = document.getElementById('company').value;
+
+            // Q&A 체크
+            if (board === 'qna' && !company) {
+                alert('질문할 기업을 선택해주세요.');
+                return;
+            }
+
+            // 별 개수 체크 (Q&A)
+            if (board === 'qna') {
+                const stars = parseInt(document.getElementById('currentStars').textContent);
+                if (stars < 5) {
+                    if (confirm('별이 부족합니다. 포인트를 충전하시겠습니까?')) {
+                        location.href = 'points.html';
+                    }
+                    return;
+                }
+            }
+
+            // 성공 메시지
+            alert('글이 등록되었습니다!');
+            location.href = 'community.html';
+        }
+
+        // 에디터 기능 (데모)
+        function formatText(command) {
+            document.execCommand(command, false, null);
+        }
+
+        function insertList() {
+            const content = document.getElementById('content');
+            const start = content.selectionStart;
+            const end = content.selectionEnd;
+            const selectedText = content.value.substring(start, end);
+            const lines = selectedText.split('\n');
+            const bulletList = lines.map(line => '• ' + line).join('\n');
+
+            content.value = content.value.substring(0, start) + bulletList + content.value.substring(end);
+        }
+
+        function insertLink() {
+            const url = prompt('링크 URL을 입력하세요:');
+            if (url) {
+                const content = document.getElementById('content');
+                const start = content.selectionStart;
+                content.value = content.value.substring(0, start) + url + content.value.substring(start);
+            }
+        }
+    </script>
+</body>
+</html>

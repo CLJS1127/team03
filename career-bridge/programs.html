@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체험 프로그램 - CareerBridge</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1><img src="images/logo.svg" alt="CareerBridge" class="logo-img"> CareerBridge</h1>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <a href="programs.html" class="active">체험 프로그램</a>
+                    <a href="companies.html">기업 정보</a>
+                    <a href="community.html">커뮤니티</a>
+                    <a href="support.html">고객센터</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-outline" onclick="location.href='login.html'">로그인</button>
+                    <button class="btn btn-primary" onclick="location.href='signup.html'">회원가입</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 히어로 배너 -->
+    <div class="programs-hero">
+        <div class="container">
+            <h1 class="hero-title">체험 프로그램</h1>
+            <p class="hero-subtitle">직장 생활을 미리 경험하고 인턴십의 기회를 잡으세요</p>
+            <div class="search-box-hero">
+                <input type="text" placeholder="기업명, 직무, 지역을 검색하세요" class="search-input">
+                <button class="btn btn-search">🔍 검색</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 프로그램 리스트 메인 -->
+    <section class="programs-list-section">
+        <div class="container">
+            <div class="programs-layout">
+                <!-- 왼쪽 필터 사이드바 -->
+                <aside class="filters-sidebar">
+                    <div class="filter-header">
+                        <h3>🎯 필터</h3>
+                        <button class="btn-reset" onclick="resetFilters()">초기화</button>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3 class="filter-title">🗓️ 날짜</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="radio" name="date" checked>
+                                <span>전체</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="date">
+                                <span>이번 주</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="date">
+                                <span>이번 달</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="date">
+                                <span>다음 달</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3 class="filter-title">💼 직무</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>개발 (45)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>디자인 (23)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>마케팅 (31)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>기획 (28)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>영업 (19)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>인사/총무 (12)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3 class="filter-title">📍 지역</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>서울 (89)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>경기 (42)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>인천 (15)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>부산 (11)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3 class="filter-title">🎯 인턴 전환</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>전환 가능만 보기</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3 class="filter-title">🏢 기업 규모</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>대기업 (45)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>중견기업 (38)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>스타트업 (74)</span>
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- 오른쪽 프로그램 리스트 -->
+                <div class="programs-content">
+                    <div class="programs-header">
+                        <div class="programs-count">
+                            <h2>전체 <span class="highlight">157개</span> 프로그램</h2>
+                        </div>
+                        <div class="programs-sort">
+                            <select class="sort-select">
+                                <option>최신순</option>
+                                <option>마감임박순</option>
+                                <option>인기순</option>
+                                <option>참가인원 적은순</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="programs-grid-modern">
+                        <!-- 프로그램 카드 1 -->
+                        <div class="program-card-modern" onclick="location.href='program-detail.html'">
+                            <div class="program-card-badges">
+                                <span class="badge badge-new">NEW</span>
+                                <span class="badge badge-urgent">마감임박</span>
+                            </div>
+                            <div class="program-card-company">
+                                <div class="company-logo-modern" style="background: #FFEB00;">카</div>
+                                <div class="company-info">
+                                    <h3>카카오모빌리티</h3>
+                                    <p class="company-type">대기업 · IT/플랫폼</p>
+                                </div>
+                            </div>
+                            <h4 class="program-card-title">서비스 기획 1일 체험</h4>
+                            <p class="program-card-desc">실제 서비스 기획 프로세스를 체험하고 현직 PM과 함께 미니 프로젝트를 진행합니다.</p>
+                            <div class="program-card-meta">
+                                <div class="meta-row">
+                                    <span>📅 2026.02.15 (토)</span>
+                                    <span>⏰ 10:00-17:00</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span>📍 판교</span>
+                                    <span class="free-badge">무료</span>
+                                </div>
+                            </div>
+                            <div class="program-card-progress">
+                                <div class="progress-info">
+                                    <span>모집 인원</span>
+                                    <span class="progress-count"><strong>5</strong> / 20명</span>
+                                </div>
+                                <div class="progress-bar-modern">
+                                    <div class="progress" style="width: 25%"></div>
+                                </div>
+                            </div>
+                            <div class="program-card-footer">
+                                <div class="program-tags">
+                                    <span class="tag">기획</span>
+                                    <span class="tag">인턴전환</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm" onclick="event.stopPropagation(); location.href='application.html'">신청하기</button>
+                            </div>
+                        </div>
+
+                        <!-- 프로그램 카드 2 -->
+                        <div class="program-card-modern" onclick="location.href='program-detail.html'">
+                            <div class="program-card-badges">
+                                <span class="badge badge-new">NEW</span>
+                            </div>
+                            <div class="program-card-company">
+                                <div class="company-logo-modern" style="background: #00C73C;">배</div>
+                                <div class="company-info">
+                                    <h3>배달의민족</h3>
+                                    <p class="company-type">대기업 · 푸드테크</p>
+                                </div>
+                            </div>
+                            <h4 class="program-card-title">마케팅 기획 1일 체험</h4>
+                            <p class="program-card-desc">데이터 기반 마케팅 캠페인 기획 과정을 배우고 실전 프로젝트를 수행합니다.</p>
+                            <div class="program-card-meta">
+                                <div class="meta-row">
+                                    <span>📅 2026.02.18 (화)</span>
+                                    <span>⏰ 10:00-18:00</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span>📍 송파구</span>
+                                    <span class="free-badge">무료</span>
+                                </div>
+                            </div>
+                            <div class="program-card-progress">
+                                <div class="progress-info">
+                                    <span>모집 인원</span>
+                                    <span class="progress-count"><strong>3</strong> / 15명</span>
+                                </div>
+                                <div class="progress-bar-modern">
+                                    <div class="progress" style="width: 20%"></div>
+                                </div>
+                            </div>
+                            <div class="program-card-footer">
+                                <div class="program-tags">
+                                    <span class="tag">마케팅</span>
+                                    <span class="tag">인턴전환</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm" onclick="event.stopPropagation(); location.href='application.html'">신청하기</button>
+                            </div>
+                        </div>
+
+                        <!-- 프로그램 카드 3 -->
+                        <div class="program-card-modern" onclick="location.href='program-detail.html'">
+                            <div class="program-card-company">
+                                <div class="company-logo-modern" style="background: #5F0080;">쿠</div>
+                                <div class="company-info">
+                                    <h3>쿠팡</h3>
+                                    <p class="company-type">대기업 · 이커머스</p>
+                                </div>
+                            </div>
+                            <h4 class="program-card-title">물류 시스템 운영 2일 체험</h4>
+                            <p class="program-card-desc">대규모 물류 시스템의 운영 과정을 체험하고 효율화 방안을 제안합니다.</p>
+                            <div class="program-card-meta">
+                                <div class="meta-row">
+                                    <span>📅 2026.02.20-21일</span>
+                                    <span>⏰ 09:00-18:00</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span>📍 김포</span>
+                                    <span class="free-badge">무료</span>
+                                </div>
+                            </div>
+                            <div class="program-card-progress">
+                                <div class="progress-info">
+                                    <span>모집 인원</span>
+                                    <span class="progress-count"><strong>8</strong> / 30명</span>
+                                </div>
+                                <div class="progress-bar-modern">
+                                    <div class="progress" style="width: 27%"></div>
+                                </div>
+                            </div>
+                            <div class="program-card-footer">
+                                <div class="program-tags">
+                                    <span class="tag">물류</span>
+                                    <span class="tag">운영</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm" onclick="event.stopPropagation(); location.href='application.html'">신청하기</button>
+                            </div>
+                        </div>
+
+                        <!-- 프로그램 카드 4 -->
+                        <div class="program-card-modern" onclick="location.href='program-detail.html'">
+                            <div class="program-card-company">
+                                <div class="company-logo-modern" style="background: #03C75A;">네</div>
+                                <div class="company-info">
+                                    <h3>네이버</h3>
+                                    <p class="company-type">대기업 · IT/플랫폼</p>
+                                </div>
+                            </div>
+                            <h4 class="program-card-title">AI 연구 인턴 1일 체험</h4>
+                            <p class="program-card-desc">최신 AI 기술을 활용한 프로젝트 체험과 현직 연구원과의 네트워킹</p>
+                            <div class="program-card-meta">
+                                <div class="meta-row">
+                                    <span>📅 2026.03.05 (수)</span>
+                                    <span>⏰ 10:00-18:00</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span>📍 판교</span>
+                                    <span class="free-badge">무료</span>
+                                </div>
+                            </div>
+                            <div class="program-card-progress">
+                                <div class="progress-info">
+                                    <span>모집 인원</span>
+                                    <span class="progress-count"><strong>12</strong> / 25명</span>
+                                </div>
+                                <div class="progress-bar-modern">
+                                    <div class="progress" style="width: 48%"></div>
+                                </div>
+                            </div>
+                            <div class="program-card-footer">
+                                <div class="program-tags">
+                                    <span class="tag">개발</span>
+                                    <span class="tag">AI</span>
+                                    <span class="tag">인턴전환</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm" onclick="event.stopPropagation(); location.href='application.html'">신청하기</button>
+                            </div>
+                        </div>
+
+                        <!-- 프로그램 카드 5 -->
+                        <div class="program-card-modern" onclick="location.href='program-detail.html'">
+                            <div class="program-card-company">
+                                <div class="company-logo-modern" style="background: #FF6B00;">토</div>
+                                <div class="company-info">
+                                    <h3>토스</h3>
+                                    <p class="company-type">스타트업 · 핀테크</p>
+                                </div>
+                            </div>
+                            <h4 class="program-card-title">UX 디자인 1일 체험</h4>
+                            <p class="program-card-desc">실제 금융 서비스 UX 개선 프로젝트에 참여하고 전문가 피드백 받기</p>
+                            <div class="program-card-meta">
+                                <div class="meta-row">
+                                    <span>📅 2026.03.12 (화)</span>
+                                    <span>⏰ 10:00-17:00</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span>📍 강남</span>
+                                    <span class="free-badge">무료</span>
+                                </div>
+                            </div>
+                            <div class="program-card-progress">
+                                <div class="progress-info">
+                                    <span>모집 인원</span>
+                                    <span class="progress-count"><strong>6</strong> / 15명</span>
+                                </div>
+                                <div class="progress-bar-modern">
+                                    <div class="progress" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <div class="program-card-footer">
+                                <div class="program-tags">
+                                    <span class="tag">디자인</span>
+                                    <span class="tag">UX</span>
+                                    <span class="tag">인턴전환</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm" onclick="event.stopPropagation(); location.href='application.html'">신청하기</button>
+                            </div>
+                        </div>
+
+                        <!-- 프로그램 카드 6 -->
+                        <div class="program-card-modern" onclick="location.href='program-detail.html'">
+                            <div class="program-card-company">
+                                <div class="company-logo-modern" style="background: #FF0558;">당</div>
+                                <div class="company-info">
+                                    <h3>당근마켓</h3>
+                                    <p class="company-type">스타트업 · 커뮤니티</p>
+                                </div>
+                            </div>
+                            <h4 class="program-card-title">서비스 기획 1일 체험</h4>
+                            <p class="program-card-desc">지역 기반 서비스의 특성을 이해하고 실제 기획 프로세스 경험</p>
+                            <div class="program-card-meta">
+                                <div class="meta-row">
+                                    <span>📅 2026.03.18 (월)</span>
+                                    <span>⏰ 10:00-18:00</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span>📍 서울</span>
+                                    <span class="free-badge">무료</span>
+                                </div>
+                            </div>
+                            <div class="program-card-progress">
+                                <div class="progress-info">
+                                    <span>모집 인원</span>
+                                    <span class="progress-count"><strong>4</strong> / 12명</span>
+                                </div>
+                                <div class="progress-bar-modern">
+                                    <div class="progress" style="width: 33%"></div>
+                                </div>
+                            </div>
+                            <div class="program-card-footer">
+                                <div class="program-tags">
+                                    <span class="tag">기획</span>
+                                    <span class="tag">인턴전환</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm" onclick="event.stopPropagation(); location.href='application.html'">신청하기</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 페이지네이션 -->
+                    <div class="pagination">
+                        <button class="pagination-btn">‹</button>
+                        <button class="pagination-btn active">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <button class="pagination-btn">4</button>
+                        <button class="pagination-btn">5</button>
+                        <button class="pagination-btn">›</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌉 CareerBridge</h3>
+                    <p>직장 생활, 미리 경험해보세요</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul>
+                        <li><a href="programs.html">체험 프로그램</a></li>
+                        <li><a href="companies.html">기업 정보</a></li>
+                        <li><a href="community.html">커뮤니티</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="support.html">공지사항</a></li>
+                        <li><a href="support.html">FAQ</a></li>
+                        <li><a href="support.html">1:1 문의</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>회사 정보</h4>
+                    <p>대표: OOO<br>
+                    이메일: contact@careerbridge.com<br>
+                    전화: 02-1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CareerBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function resetFilters() {
+            // 모든 체크박스 초기화
+            document.querySelectorAll('.filters-sidebar input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+
+            // 첫 번째 라디오 버튼 선택
+            const firstRadio = document.querySelector('.filters-sidebar input[type="radio"]');
+            if (firstRadio) {
+                firstRadio.checked = true;
+            }
+
+            alert('필터가 초기화되었습니다.');
+        }
+    </script>
+</body>
+</html>

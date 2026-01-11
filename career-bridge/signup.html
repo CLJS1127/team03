@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 - CareerBridge</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth-modern.css">
+</head>
+<body class="auth-body">
+    <!-- 헤더 (심플 버전) -->
+    <header class="header-simple">
+        <div class="container">
+            <div class="header-simple-content">
+                <a href="index.html" class="logo-simple">
+                    <img src="images/logo.svg" alt="CareerBridge" class="logo-img">
+                    <span>CareerBridge</span>
+                </a>
+                <a href="index.html" class="btn-text">← 홈으로</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 회원가입 섹션 -->
+    <section class="auth-modern-section">
+        <div class="auth-split-container">
+            <!-- 왼쪽: 브랜딩 영역 -->
+            <div class="auth-branding">
+                <div class="auth-branding-content">
+                    <div class="brand-logo-large">
+                        <img src="images/logo.svg" alt="CareerBridge">
+                    </div>
+                    <h2 class="brand-title">CareerBridge</h2>
+                    <p class="brand-subtitle">커리어의 시작, 함께 하세요</p>
+
+                    <div class="brand-benefits">
+                        <h3 class="benefits-title">회원 혜택</h3>
+                        <ul class="benefits-list">
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span>무료 체험 프로그램 신청</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span>인턴십 전환 기회</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span>참여 인증서 발급</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span>현직자 네트워킹</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span>맞춤형 프로그램 추천</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="brand-testimonial">
+                        <div class="testimonial-content">
+                            <p>"CareerBridge 덕분에 꿈꾸던 기업의 인턴으로 합격했어요!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">김</div>
+                                <div>
+                                    <div class="author-name">김OO</div>
+                                    <div class="author-company">네이버 인턴</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 오른쪽: 회원가입 폼 -->
+            <div class="auth-form-container">
+                <div class="auth-form-wrapper">
+                    <div class="auth-header-modern">
+                        <h1>회원가입</h1>
+                        <p>3분이면 가입 완료!</p>
+                    </div>
+
+                    <!-- 소셜 회원가입 -->
+                    <div class="social-login-modern">
+                        <button class="btn-social-modern kakao" onclick="alert('카카오 회원가입은 준비 중입니다!')">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7-.2.8-.7 2.8-.8 3.2-.1.5.2.5.4.4.3-.1 3.7-2.5 4.3-2.9.5.1 1 .1 1.4.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/>
+                            </svg>
+                            카카오로 3초 만에 시작
+                        </button>
+                        <button class="btn-social-modern google" onclick="alert('구글 회원가입은 준비 중입니다!')">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                            구글로 3초 만에 시작
+                        </button>
+                    </div>
+
+                    <div class="auth-divider-modern">
+                        <span>또는 이메일로 가입</span>
+                    </div>
+
+                    <!-- 회원가입 폼 -->
+                    <form id="signupForm" class="auth-form-modern">
+                        <div class="form-row-modern">
+                            <div class="form-group-modern">
+                                <label for="name" class="form-label-modern">이름 *</label>
+                                <div class="input-wrapper">
+                                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="12" cy="7" r="4"/>
+                                    </svg>
+                                    <input type="text" id="name" name="name" class="form-input-modern" placeholder="홍길동" required>
+                                </div>
+                            </div>
+                            <div class="form-group-modern">
+                                <label for="birthDate" class="form-label-modern">생년월일 *</label>
+                                <div class="input-wrapper">
+                                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                        <line x1="16" y1="2" x2="16" y2="6"/>
+                                        <line x1="8" y1="2" x2="8" y2="6"/>
+                                        <line x1="3" y1="10" x2="21" y2="10"/>
+                                    </svg>
+                                    <input type="date" id="birthDate" name="birthDate" class="form-input-modern" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group-modern">
+                            <label for="email" class="form-label-modern">이메일 *</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                <input type="email" id="email" name="email" class="form-input-modern" placeholder="example@email.com" required>
+                                <button type="button" class="input-action-btn" onclick="checkEmailDuplicate()">중복확인</button>
+                            </div>
+                            <p class="input-hint" id="emailHint"></p>
+                        </div>
+
+                        <div class="form-group-modern">
+                            <label for="password" class="form-label-modern">비밀번호 *</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                </svg>
+                                <input type="password" id="password" name="password" class="form-input-modern" placeholder="8자 이상, 영문+숫자+특수문자" required>
+                                <button type="button" class="input-action" onclick="togglePassword('password')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="password-strength-modern" id="passwordStrength">
+                                <div class="strength-bar-modern">
+                                    <div class="strength-fill-modern" id="strengthFill"></div>
+                                </div>
+                                <p class="strength-text-modern" id="strengthText">비밀번호 강도</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group-modern">
+                            <label for="passwordConfirm" class="form-label-modern">비밀번호 확인 *</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                </svg>
+                                <input type="password" id="passwordConfirm" name="passwordConfirm" class="form-input-modern" placeholder="비밀번호를 다시 입력하세요" required>
+                            </div>
+                            <p class="input-hint" id="passwordHint"></p>
+                        </div>
+
+                        <div class="form-group-modern">
+                            <label for="phone" class="form-label-modern">전화번호 *</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                <input type="tel" id="phone" name="phone" class="form-input-modern" placeholder="010-1234-5678" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group-modern">
+                            <label class="form-label-modern">관심 분야 (최대 3개)</label>
+                            <div class="interest-pills">
+                                <label class="pill-checkbox">
+                                    <input type="checkbox" name="interest" value="개발">
+                                    <span class="pill">💻 개발</span>
+                                </label>
+                                <label class="pill-checkbox">
+                                    <input type="checkbox" name="interest" value="디자인">
+                                    <span class="pill">🎨 디자인</span>
+                                </label>
+                                <label class="pill-checkbox">
+                                    <input type="checkbox" name="interest" value="마케팅">
+                                    <span class="pill">📊 마케팅</span>
+                                </label>
+                                <label class="pill-checkbox">
+                                    <input type="checkbox" name="interest" value="기획">
+                                    <span class="pill">📝 기획</span>
+                                </label>
+                                <label class="pill-checkbox">
+                                    <input type="checkbox" name="interest" value="영업">
+                                    <span class="pill">💼 영업</span>
+                                </label>
+                                <label class="pill-checkbox">
+                                    <input type="checkbox" name="interest" value="인사">
+                                    <span class="pill">👥 인사</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="agreement-modern">
+                            <label class="checkbox-modern">
+                                <input type="checkbox" id="agreeAll">
+                                <span class="checkbox-checkmark"></span>
+                                <span class="checkbox-label bold">전체 동의</span>
+                            </label>
+                            <div class="agreement-divider"></div>
+                            <label class="checkbox-modern">
+                                <input type="checkbox" name="agreeTerms" class="agree-item" required>
+                                <span class="checkbox-checkmark"></span>
+                                <span class="checkbox-label">(필수) 이용약관 동의</span>
+                                <a href="#" class="agreement-view">보기</a>
+                            </label>
+                            <label class="checkbox-modern">
+                                <input type="checkbox" name="agreePrivacy" class="agree-item" required>
+                                <span class="checkbox-checkmark"></span>
+                                <span class="checkbox-label">(필수) 개인정보 수집 및 이용 동의</span>
+                                <a href="#" class="agreement-view">보기</a>
+                            </label>
+                            <label class="checkbox-modern">
+                                <input type="checkbox" name="agreeAge" class="agree-item" required>
+                                <span class="checkbox-checkmark"></span>
+                                <span class="checkbox-label">(필수) 만 14세 이상입니다</span>
+                            </label>
+                            <label class="checkbox-modern">
+                                <input type="checkbox" name="agreeMarketing" class="agree-item">
+                                <span class="checkbox-checkmark"></span>
+                                <span class="checkbox-label">(선택) 마케팅 정보 수신 동의</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-modern-primary">가입하기</button>
+                    </form>
+
+                    <div class="auth-footer-modern">
+                        <p>이미 회원이신가요? <a href="login.html" class="link-primary-modern">로그인</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 성공 모달 -->
+    <div id="signupSuccessModal" class="modal-modern">
+        <div class="modal-overlay" onclick="document.getElementById('signupSuccessModal').style.display='none'"></div>
+        <div class="modal-content-modern">
+            <div class="modal-icon-modern success">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+            </div>
+            <h2>회원가입 완료!</h2>
+            <p>CareerBridge에 오신 것을 환영합니다.<br>이제 다양한 프로그램을 경험해보세요.</p>
+            <button class="btn-modern-primary btn-block" onclick="location.href='login.html'">로그인하러 가기</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        function togglePassword(id) {
+            const input = document.getElementById(id);
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+</body>
+</html>

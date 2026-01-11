@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기업 정보 - CareerBridge</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1><img src="images/logo.svg" alt="CareerBridge" class="logo-img"> CareerBridge</h1>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <a href="programs.html">체험 프로그램</a>
+                    <a href="companies.html" class="active">기업 정보</a>
+                    <a href="community.html">커뮤니티</a>
+                    <a href="support.html">고객센터</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-outline" onclick="location.href='login.html'">로그인</button>
+                    <button class="btn btn-primary" onclick="location.href='signup.html'">회원가입</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 브레드크럼 -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">홈</a> > <span>기업 정보</span>
+        </div>
+    </div>
+
+    <!-- 기업 정보 섹션 -->
+    <section class="companies-section">
+        <div class="container">
+            <div class="page-header">
+                <h1>제휴 기업</h1>
+                <p>CareerBridge와 함께하는 892개의 우수 기업</p>
+            </div>
+
+            <!-- 기업 필터 -->
+            <div class="companies-filter">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" onclick="filterCompanies('all', this)">전체 (892)</button>
+                    <button class="filter-tab" onclick="filterCompanies('large', this)">대기업 (245)</button>
+                    <button class="filter-tab" onclick="filterCompanies('medium', this)">중견기업 (338)</button>
+                    <button class="filter-tab" onclick="filterCompanies('startup', this)">스타트업 (309)</button>
+                </div>
+                <div class="search-box-small">
+                    <input type="text" placeholder="기업명 검색" class="search-input-small">
+                    <button class="btn-search-small">🔍</button>
+                </div>
+            </div>
+
+            <!-- 기업 그리드 -->
+            <div class="companies-grid">
+                <!-- 기업 카드 1 -->
+                <div class="company-card" data-type="large">
+                    <div class="company-card-header">
+                        <div class="company-logo-card" style="background: #FFEB00;">카</div>
+                        <div class="company-badge">대기업</div>
+                    </div>
+                    <h3>카카오모빌리티</h3>
+                    <p class="company-desc">모빌리티 플랫폼 선두기업</p>
+                    <div class="company-stats-small">
+                        <span>📊 프로그램 15개</span>
+                        <span>👥 참여자 892명</span>
+                    </div>
+                    <div class="company-tags">
+                        <span class="tag-mini">개발</span>
+                        <span class="tag-mini">기획</span>
+                        <span class="tag-mini">마케팅</span>
+                    </div>
+                    <button class="btn btn-outline btn-sm btn-block" onclick="location.href='programs.html'">프로그램 보기</button>
+                </div>
+
+                <!-- 기업 카드 2 -->
+                <div class="company-card" data-type="large">
+                    <div class="company-card-header">
+                        <div class="company-logo-card" style="background: #00C73C;">배</div>
+                        <div class="company-badge">대기업</div>
+                    </div>
+                    <h3>배달의민족</h3>
+                    <p class="company-desc">푸드테크 1위 기업</p>
+                    <div class="company-stats-small">
+                        <span>📊 프로그램 12개</span>
+                        <span>👥 참여자 745명</span>
+                    </div>
+                    <div class="company-tags">
+                        <span class="tag-mini">개발</span>
+                        <span class="tag-mini">디자인</span>
+                        <span class="tag-mini">마케팅</span>
+                    </div>
+                    <button class="btn btn-outline btn-sm btn-block" onclick="location.href='programs.html'">프로그램 보기</button>
+                </div>
+
+                <!-- 기업 카드 3 -->
+                <div class="company-card" data-type="large">
+                    <div class="company-card-header">
+                        <div class="company-logo-card" style="background: #5F0080;">쿠</div>
+                        <div class="company-badge">대기업</div>
+                    </div>
+                    <h3>쿠팡</h3>
+                    <p class="company-desc">이커머스 혁신 기업</p>
+                    <div class="company-stats-small">
+                        <span>📊 프로그램 18개</span>
+                        <span>👥 참여자 1,203명</span>
+                    </div>
+                    <div class="company-tags">
+                        <span class="tag-mini">물류</span>
+                        <span class="tag-mini">개발</span>
+                        <span class="tag-mini">운영</span>
+                    </div>
+                    <button class="btn btn-outline btn-sm btn-block" onclick="location.href='programs.html'">프로그램 보기</button>
+                </div>
+
+                <!-- 기업 카드 4 -->
+                <div class="company-card" data-type="large">
+                    <div class="company-card-header">
+                        <div class="company-logo-card" style="background: #03C75A;">네</div>
+                        <div class="company-badge">대기업</div>
+                    </div>
+                    <h3>네이버</h3>
+                    <p class="company-desc">글로벌 IT 플랫폼</p>
+                    <div class="company-stats-small">
+                        <span>📊 프로그램 25개</span>
+                        <span>👥 참여자 1,567명</span>
+                    </div>
+                    <div class="company-tags">
+                        <span class="tag-mini">개발</span>
+                        <span class="tag-mini">AI</span>
+                        <span class="tag-mini">디자인</span>
+                    </div>
+                    <button class="btn btn-outline btn-sm btn-block" onclick="location.href='programs.html'">프로그램 보기</button>
+                </div>
+
+                <!-- 기업 카드 5 -->
+                <div class="company-card" data-type="startup">
+                    <div class="company-card-header">
+                        <div class="company-logo-card" style="background: #FF6B00;">토</div>
+                        <div class="company-badge startup">스타트업</div>
+                    </div>
+                    <h3>토스</h3>
+                    <p class="company-desc">핀테크 혁신 리더</p>
+                    <div class="company-stats-small">
+                        <span>📊 프로그램 8개</span>
+                        <span>👥 참여자 423명</span>
+                    </div>
+                    <div class="company-tags">
+                        <span class="tag-mini">개발</span>
+                        <span class="tag-mini">금융</span>
+                        <span class="tag-mini">UX</span>
+                    </div>
+                    <button class="btn btn-outline btn-sm btn-block" onclick="location.href='programs.html'">프로그램 보기</button>
+                </div>
+
+                <!-- 기업 카드 6 -->
+                <div class="company-card" data-type="startup">
+                    <div class="company-card-header">
+                        <div class="company-logo-card" style="background: #FF0558;">당</div>
+                        <div class="company-badge startup">스타트업</div>
+                    </div>
+                    <h3>당근마켓</h3>
+                    <p class="company-desc">지역 기반 커뮤니티</p>
+                    <div class="company-stats-small">
+                        <span>📊 프로그램 6개</span>
+                        <span>👥 참여자 289명</span>
+                    </div>
+                    <div class="company-tags">
+                        <span class="tag-mini">개발</span>
+                        <span class="tag-mini">기획</span>
+                        <span class="tag-mini">CS</span>
+                    </div>
+                    <button class="btn btn-outline btn-sm btn-block" onclick="location.href='programs.html'">프로그램 보기</button>
+                </div>
+            </div>
+
+            <!-- 페이지네이션 -->
+            <div class="pagination">
+                <button class="pagination-btn">‹</button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn">4</button>
+                <button class="pagination-btn">5</button>
+                <button class="pagination-btn">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌉 CareerBridge</h3>
+                    <p>직장 생활, 미리 경험해보세요</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul>
+                        <li><a href="programs.html">체험 프로그램</a></li>
+                        <li><a href="companies.html">기업 정보</a></li>
+                        <li><a href="community.html">커뮤니티</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="support.html">공지사항</a></li>
+                        <li><a href="support.html">FAQ</a></li>
+                        <li><a href="support.html">1:1 문의</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>회사 정보</h4>
+                    <p>대표: OOO<br>
+                    이메일: contact@careerbridge.com<br>
+                    전화: 02-1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CareerBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function filterCompanies(type, button) {
+            // 모든 탭 비활성화
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            button.classList.add('active');
+
+            // 카드 필터링
+            const cards = document.querySelectorAll('.company-card');
+            cards.forEach(card => {
+                if (type === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    if (card.getAttribute('data-type') === type) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

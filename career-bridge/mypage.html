@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지 - CareerBridge</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1><img src="images/logo.png" alt="CareerBridge" class="logo-img"> CareerBridge</h1>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <a href="programs.html">체험 프로그램</a>
+                    <a href="companies.html">기업 정보</a>
+                    <a href="community.html">커뮤니티</a>
+                    <a href="support.html">고객센터</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-outline" onclick="alert('로그아웃 되었습니다.'); location.href='index.html'">로그아웃</button>
+                    <a href="mypage.html" class="user-avatar">
+                        <div class="avatar-circle">홍</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 브레드크럼 -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">홈</a> > <span>마이페이지</span>
+        </div>
+    </div>
+
+    <!-- 마이페이지 섹션 -->
+    <section class="mypage-section">
+        <div class="container">
+            <div class="mypage-layout">
+                <!-- 왼쪽 사이드바 -->
+                <aside class="mypage-sidebar">
+                    <div class="user-profile">
+                        <div class="user-avatar-large">홍</div>
+                        <h3 class="user-name">홍길동</h3>
+                        <p class="user-email">hong@email.com</p>
+                        <button class="btn btn-outline btn-sm" onclick="alert('프로필 수정 기능은 준비 중입니다!')">프로필 수정</button>
+                    </div>
+
+                    <nav class="mypage-nav">
+                        <a href="#applications" class="mypage-nav-item active" onclick="showTab('applications', event)">
+                            📝 신청 내역
+                            <span class="badge-count">3</span>
+                        </a>
+                        <a href="#wishlist" class="mypage-nav-item" onclick="showTab('wishlist', event)">
+                            ♥ 관심 프로그램
+                            <span class="badge-count">5</span>
+                        </a>
+                        <a href="#completed" class="mypage-nav-item" onclick="showTab('completed', event)">
+                            ✅ 완료 프로그램
+                            <span class="badge-count">2</span>
+                        </a>
+                        <a href="#certificates" class="mypage-nav-item" onclick="showTab('certificates', event)">
+                            🏆 인증서
+                            <span class="badge-count">2</span>
+                        </a>
+                        <a href="#settings" class="mypage-nav-item" onclick="showTab('settings', event)">
+                            ⚙️ 설정
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- 오른쪽 컨텐츠 -->
+                <div class="mypage-content">
+                    <!-- 신청 내역 탭 -->
+                    <div id="applications" class="tab-content active">
+                        <div class="tab-header">
+                            <h2>📝 신청 내역</h2>
+                            <p class="tab-subtitle">신청한 프로그램의 현황을 확인하세요</p>
+                        </div>
+
+                        <div class="status-filters">
+                            <button class="status-filter active" onclick="filterStatus('all', this)">전체 (3)</button>
+                            <button class="status-filter" onclick="filterStatus('pending', this)">심사중 (1)</button>
+                            <button class="status-filter" onclick="filterStatus('approved', this)">승인됨 (1)</button>
+                            <button class="status-filter" onclick="filterStatus('rejected', this)">거절됨 (1)</button>
+                        </div>
+
+                        <div class="application-list">
+                            <!-- 신청 항목 1 - 승인됨 -->
+                            <div class="application-card" data-status="approved">
+                                <div class="application-header">
+                                    <div class="company-logo-small">
+                                        <div class="logo-placeholder-small" style="background: #FFEB00;">카</div>
+                                    </div>
+                                    <div class="application-info">
+                                        <h3>[카카오모빌리티] 서비스 기획 1일 체험</h3>
+                                        <p class="application-date">신청일: 2026.01.08</p>
+                                    </div>
+                                    <div class="status-badge approved">승인됨</div>
+                                </div>
+                                <div class="application-details">
+                                    <div class="detail-row">
+                                        <span class="detail-label">일정:</span>
+                                        <span class="detail-value">2026.02.15 (토) 10:00-17:00</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">장소:</span>
+                                        <span class="detail-value">판교역 5분 거리</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">승인 메시지:</span>
+                                        <span class="detail-value success">축하드립니다! 프로그램 참여가 확정되었습니다. 참여 안내 메일을 발송했습니다.</span>
+                                    </div>
+                                </div>
+                                <div class="application-actions">
+                                    <button class="btn btn-outline btn-sm" onclick="location.href='program-detail.html'">상세보기</button>
+                                    <button class="btn btn-primary btn-sm" onclick="alert('출석 체크는 프로그램 당일에 가능합니다!')">출석 체크</button>
+                                    <button class="btn btn-outline btn-sm" onclick="if(confirm('정말 취소하시겠습니까?')) alert('취소되었습니다.')">취소</button>
+                                </div>
+                            </div>
+
+                            <!-- 신청 항목 2 - 심사중 -->
+                            <div class="application-card" data-status="pending">
+                                <div class="application-header">
+                                    <div class="company-logo-small">
+                                        <div class="logo-placeholder-small" style="background: #00C73C;">배</div>
+                                    </div>
+                                    <div class="application-info">
+                                        <h3>[배달의민족] 마케팅 기획 1일 체험</h3>
+                                        <p class="application-date">신청일: 2026.01.10</p>
+                                    </div>
+                                    <div class="status-badge pending">심사중</div>
+                                </div>
+                                <div class="application-details">
+                                    <div class="detail-row">
+                                        <span class="detail-label">일정:</span>
+                                        <span class="detail-value">2026.02.18 (화) 10:00-18:00</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">장소:</span>
+                                        <span class="detail-value">송파구</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">안내:</span>
+                                        <span class="detail-value">2-3일 내 심사 결과를 이메일로 안내드립니다.</span>
+                                    </div>
+                                </div>
+                                <div class="application-actions">
+                                    <button class="btn btn-outline btn-sm" onclick="location.href='program-detail.html'">상세보기</button>
+                                    <button class="btn btn-outline btn-sm" onclick="if(confirm('정말 취소하시겠습니까?')) alert('취소되었습니다.')">신청 취소</button>
+                                </div>
+                            </div>
+
+                            <!-- 신청 항목 3 - 거절됨 -->
+                            <div class="application-card" data-status="rejected">
+                                <div class="application-header">
+                                    <div class="company-logo-small">
+                                        <div class="logo-placeholder-small" style="background: #5F0080;">쿠</div>
+                                    </div>
+                                    <div class="application-info">
+                                        <h3>[쿠팡] 물류 시스템 운영 2일 체험</h3>
+                                        <p class="application-date">신청일: 2026.01.05</p>
+                                    </div>
+                                    <div class="status-badge rejected">거절됨</div>
+                                </div>
+                                <div class="application-details">
+                                    <div class="detail-row">
+                                        <span class="detail-label">일정:</span>
+                                        <span class="detail-value">2026.02.20-21일 09:00-18:00</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">거절 사유:</span>
+                                        <span class="detail-value error">지원자가 많아 아쉽게도 선발되지 못했습니다. 다음 기회에 다시 지원해주세요.</span>
+                                    </div>
+                                </div>
+                                <div class="application-actions">
+                                    <button class="btn btn-outline btn-sm" onclick="location.href='program-detail.html'">상세보기</button>
+                                    <button class="btn btn-primary btn-sm" onclick="alert('다음 프로그램이 오픈되면 알림을 드리겠습니다!')">알림 받기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 관심 프로그램 탭 -->
+                    <div id="wishlist" class="tab-content">
+                        <div class="tab-header">
+                            <h2>♥ 관심 프로그램</h2>
+                            <p class="tab-subtitle">찜한 프로그램을 모아보세요</p>
+                        </div>
+
+                        <div class="wishlist-grid">
+                            <div class="program-card-small">
+                                <div class="card-badges">
+                                    <span class="badge badge-new">NEW</span>
+                                </div>
+                                <div class="card-company">
+                                    <div class="logo-placeholder-small" style="background: #03C75A;">네</div>
+                                    <span>네이버</span>
+                                </div>
+                                <h3>AI 연구 인턴 1일 체험</h3>
+                                <p class="card-desc">최신 AI 기술을 활용한 프로젝트 체험</p>
+                                <div class="card-meta">
+                                    <span>📅 3월 5일</span>
+                                    <span>📍 판교</span>
+                                </div>
+                                <div class="card-actions">
+                                    <button class="btn btn-outline btn-sm btn-block" onclick="location.href='program-detail.html'">상세보기</button>
+                                    <button class="btn btn-icon btn-sm" onclick="this.parentElement.parentElement.remove(); alert('관심 프로그램에서 제거되었습니다.')">♥</button>
+                                </div>
+                            </div>
+
+                            <div class="program-card-small">
+                                <div class="card-company">
+                                    <div class="logo-placeholder-small" style="background: #FF6B00;">토</div>
+                                    <span>토스</span>
+                                </div>
+                                <h3>UX 디자인 1일 체험</h3>
+                                <p class="card-desc">실제 금융 서비스 UX 개선 프로젝트</p>
+                                <div class="card-meta">
+                                    <span>📅 3월 12일</span>
+                                    <span>📍 강남</span>
+                                </div>
+                                <div class="card-actions">
+                                    <button class="btn btn-outline btn-sm btn-block" onclick="location.href='program-detail.html'">상세보기</button>
+                                    <button class="btn btn-icon btn-sm" onclick="this.parentElement.parentElement.remove(); alert('관심 프로그램에서 제거되었습니다.')">♥</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 완료 프로그램 탭 -->
+                    <div id="completed" class="tab-content">
+                        <div class="tab-header">
+                            <h2>✅ 완료 프로그램</h2>
+                            <p class="tab-subtitle">참여 완료한 프로그램을 확인하세요</p>
+                        </div>
+
+                        <div class="completed-list">
+                            <div class="completed-card">
+                                <div class="completed-header">
+                                    <div class="company-logo-small">
+                                        <div class="logo-placeholder-small" style="background: #1EC800;">라</div>
+                                    </div>
+                                    <div class="completed-info">
+                                        <h3>[라인] 프론트엔드 개발 2일 체험</h3>
+                                        <p>2026.01.10-11 참여 완료</p>
+                                    </div>
+                                    <div class="rating-stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                </div>
+                                <div class="completed-actions">
+                                    <button class="btn btn-outline btn-sm" onclick="alert('인증서 다운로드가 시작됩니다.')">인증서 다운로드</button>
+                                    <button class="btn btn-primary btn-sm" onclick="alert('리뷰 작성 기능은 준비 중입니다!')">리뷰 작성</button>
+                                </div>
+                            </div>
+
+                            <div class="completed-card">
+                                <div class="completed-header">
+                                    <div class="company-logo-small">
+                                        <div class="logo-placeholder-small" style="background: #FF0558;">당</div>
+                                    </div>
+                                    <div class="completed-info">
+                                        <h3>[당근마켓] 서비스 기획 1일 체험</h3>
+                                        <p>2025.12.20 참여 완료</p>
+                                    </div>
+                                    <div class="rating-stars">
+                                        ⭐⭐⭐⭐☆
+                                    </div>
+                                </div>
+                                <div class="completed-actions">
+                                    <button class="btn btn-outline btn-sm" onclick="alert('인증서 다운로드가 시작됩니다.')">인증서 다운로드</button>
+                                    <button class="btn btn-outline btn-sm" onclick="alert('이미 리뷰를 작성하셨습니다.')">리뷰 수정</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 인증서 탭 -->
+                    <div id="certificates" class="tab-content">
+                        <div class="tab-header">
+                            <h2>🏆 인증서</h2>
+                            <p class="tab-subtitle">참여 인증서를 확인하고 다운로드하세요</p>
+                        </div>
+
+                        <div class="certificates-grid">
+                            <div class="certificate-card">
+                                <div class="certificate-icon">📜</div>
+                                <h3>[라인] 프론트엔드 개발 2일 체험</h3>
+                                <p class="certificate-date">발급일: 2026.01.15</p>
+                                <p class="certificate-id">인증서 번호: CB-2026-00042</p>
+                                <button class="btn btn-primary btn-sm btn-block" onclick="alert('인증서 PDF 다운로드가 시작됩니다.')">다운로드</button>
+                            </div>
+
+                            <div class="certificate-card">
+                                <div class="certificate-icon">📜</div>
+                                <h3>[당근마켓] 서비스 기획 1일 체험</h3>
+                                <p class="certificate-date">발급일: 2025.12.22</p>
+                                <p class="certificate-id">인증서 번호: CB-2025-00231</p>
+                                <button class="btn btn-primary btn-sm btn-block" onclick="alert('인증서 PDF 다운로드가 시작됩니다.')">다운로드</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 설정 탭 -->
+                    <div id="settings" class="tab-content">
+                        <div class="tab-header">
+                            <h2>⚙️ 설정</h2>
+                            <p class="tab-subtitle">계정 정보 및 알림 설정을 관리하세요</p>
+                        </div>
+
+                        <div class="settings-section">
+                            <h3>알림 설정</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>이메일 알림</h4>
+                                    <p>신청 결과, 프로그램 소식 등을 이메일로 받습니다</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>SMS 알림</h4>
+                                    <p>프로그램 일정 리마인더를 문자로 받습니다</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>마케팅 수신 동의</h4>
+                                    <p>새로운 프로그램 및 이벤트 정보를 받습니다</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h3>계정 관리</h3>
+                            <button class="btn btn-outline" onclick="alert('비밀번호 변경 기능은 준비 중입니다!')">비밀번호 변경</button>
+                            <button class="btn btn-outline" onclick="if(confirm('정말 회원 탈퇴하시겠습니까?')) alert('탈퇴 처리되었습니다.')">회원 탈퇴</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌉 CareerBridge</h3>
+                    <p>직장 생활, 미리 경험해보세요</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul>
+                        <li><a href="programs.html">체험 프로그램</a></li>
+                        <li><a href="#">기업 정보</a></li>
+                        <li><a href="#">커뮤니티</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">1:1 문의</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>회사 정보</h4>
+                    <p>대표: OOO<br>
+                    이메일: contact@careerbridge.com<br>
+                    전화: 02-1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CareerBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/mypage.js"></script>
+</body>
+</html>

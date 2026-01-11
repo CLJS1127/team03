@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포인트 충전 - CareerBridge</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1><img src="images/logo.svg" alt="CareerBridge" class="logo-img"> CareerBridge</h1>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <a href="programs.html">체험 프로그램</a>
+                    <a href="companies.html">기업 정보</a>
+                    <a href="community.html">커뮤니티</a>
+                    <a href="support.html">고객센터</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-outline" onclick="location.href='mypage.html'">마이페이지</button>
+                    <div class="user-points">⭐ <span id="currentPoints">100</span>개</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 브레드크럼 -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">홈</a> >
+            <a href="support.html">고객센터</a> >
+            <span>포인트 충전</span>
+        </div>
+    </div>
+
+    <!-- 포인트 충전 섹션 -->
+    <section class="points-section">
+        <div class="container">
+            <div class="points-layout">
+                <!-- 왼쪽: 충전 옵션 -->
+                <div class="points-content">
+                    <div class="page-header">
+                        <h1>⭐ 별 포인트 충전</h1>
+                        <p>Q&A에서 기업에게 질문할 수 있는 별 포인트를 충전하세요</p>
+                    </div>
+
+                    <!-- 현재 보유 포인트 -->
+                    <div class="current-points-card">
+                        <div class="points-balance">
+                            <div class="balance-label">현재 보유 포인트</div>
+                            <div class="balance-amount">
+                                <span class="star-icon">⭐</span>
+                                <span class="amount" id="displayPoints">100</span>
+                                <span class="unit">개</span>
+                            </div>
+                        </div>
+                        <div class="points-usage">
+                            <p>💬 Q&A 질문 1회 = ⭐ 5개</p>
+                            <p>⏰ 7일 내 미답변 시 자동 환불</p>
+                        </div>
+                    </div>
+
+                    <!-- 충전 패키지 -->
+                    <div class="points-packages">
+                        <h2>충전 패키지 선택</h2>
+                        <p class="package-desc">10,000원 = ⭐ 100개</p>
+
+                        <div class="package-grid">
+                            <!-- 패키지 1 -->
+                            <div class="package-card" onclick="selectPackage(1, 10000, 100, this)">
+                                <div class="package-header">
+                                    <div class="package-stars">⭐ 100개</div>
+                                </div>
+                                <div class="package-price">10,000원</div>
+                                <div class="package-info">
+                                    <p>✓ Q&A 질문 20회</p>
+                                    <p>✓ 7일 환불 보장</p>
+                                </div>
+                            </div>
+
+                            <!-- 패키지 2 -->
+                            <div class="package-card popular" onclick="selectPackage(2, 30000, 330, this)">
+                                <div class="package-badge">인기</div>
+                                <div class="package-header">
+                                    <div class="package-stars">⭐ 330개</div>
+                                    <div class="package-bonus">+30개 보너스</div>
+                                </div>
+                                <div class="package-price">30,000원</div>
+                                <div class="package-info">
+                                    <p>✓ Q&A 질문 66회</p>
+                                    <p>✓ 10% 추가 증정</p>
+                                    <p>✓ 7일 환불 보장</p>
+                                </div>
+                            </div>
+
+                            <!-- 패키지 3 -->
+                            <div class="package-card" onclick="selectPackage(3, 50000, 600, this)">
+                                <div class="package-badge best">BEST</div>
+                                <div class="package-header">
+                                    <div class="package-stars">⭐ 600개</div>
+                                    <div class="package-bonus">+100개 보너스</div>
+                                </div>
+                                <div class="package-price">50,000원</div>
+                                <div class="package-info">
+                                    <p>✓ Q&A 질문 120회</p>
+                                    <p>✓ 20% 추가 증정</p>
+                                    <p>✓ 7일 환불 보장</p>
+                                </div>
+                            </div>
+
+                            <!-- 패키지 4 -->
+                            <div class="package-card premium" onclick="selectPackage(4, 100000, 1300, this)">
+                                <div class="package-badge premium">PREMIUM</div>
+                                <div class="package-header">
+                                    <div class="package-stars">⭐ 1,300개</div>
+                                    <div class="package-bonus">+300개 보너스</div>
+                                </div>
+                                <div class="package-price">100,000원</div>
+                                <div class="package-info">
+                                    <p>✓ Q&A 질문 260회</p>
+                                    <p>✓ 30% 추가 증정</p>
+                                    <p>✓ 30일 환불 보장</p>
+                                    <p>✓ VIP 혜택</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 결제 방법 -->
+                    <div class="payment-methods">
+                        <h2>결제 방법 선택</h2>
+
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="card" checked>
+                                <div class="payment-card">
+                                    <div class="payment-icon">💳</div>
+                                    <div class="payment-name">신용카드 / 체크카드</div>
+                                </div>
+                            </label>
+
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="bank">
+                                <div class="payment-card">
+                                    <div class="payment-icon">🏦</div>
+                                    <div class="payment-name">계좌이체</div>
+                                </div>
+                            </label>
+
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="kakao">
+                                <div class="payment-card">
+                                    <div class="payment-icon">💬</div>
+                                    <div class="payment-name">카카오페이</div>
+                                </div>
+                            </label>
+
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="toss">
+                                <div class="payment-card">
+                                    <div class="payment-icon">💙</div>
+                                    <div class="payment-name">토스페이</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 오른쪽: 결제 정보 -->
+                <aside class="payment-summary">
+                    <div class="summary-card sticky">
+                        <h3>💰 결제 정보</h3>
+
+                        <div class="summary-row">
+                            <span>선택한 패키지</span>
+                            <span id="selectedPackage">선택 안 함</span>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>별 포인트</span>
+                            <span id="selectedStars">0개</span>
+                        </div>
+
+                        <div class="summary-row bonus">
+                            <span>보너스</span>
+                            <span id="bonusStars">+0개</span>
+                        </div>
+
+                        <hr class="summary-divider">
+
+                        <div class="summary-row total">
+                            <span>총 획득</span>
+                            <span id="totalStars" class="total-stars">⭐ 0개</span>
+                        </div>
+
+                        <div class="summary-row price">
+                            <span>결제 금액</span>
+                            <span id="totalPrice" class="total-price">0원</span>
+                        </div>
+
+                        <div class="payment-notice">
+                            <p>✓ 7일 이내 미사용 시 100% 환불</p>
+                            <p>✓ 결제 후 즉시 포인트 지급</p>
+                            <p>✓ 안전한 결제 시스템</p>
+                        </div>
+
+                        <button class="btn btn-primary btn-large btn-block" onclick="processPayment()" id="paymentBtn" disabled>
+                            패키지를 선택하세요
+                        </button>
+
+                        <div class="terms-agreement">
+                            <label class="checkbox-small">
+                                <input type="checkbox" id="agreeTerms">
+                                <span>결제 진행에 동의합니다</span>
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- 포인트 사용 안내 -->
+            <div class="points-guide">
+                <h2>💡 포인트 사용 안내</h2>
+                <div class="guide-grid">
+                    <div class="guide-card">
+                        <div class="guide-icon">💬</div>
+                        <h3>Q&A 질문하기</h3>
+                        <p>커뮤니티 > Q&A에서 기업에게 직접 질문하세요. 질문 1회당 별 5개가 사용됩니다.</p>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="guide-icon">⏰</div>
+                        <h3>자동 환불 시스템</h3>
+                        <p>질문 후 7일 이내 기업 답변이 없으면 사용한 별 5개가 자동으로 환불됩니다.</p>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="guide-icon">🔄</div>
+                        <h3>포인트 환불</h3>
+                        <p>충전 후 7일 이내 미사용 시 100% 환불이 가능합니다. 마이페이지에서 신청하세요.</p>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="guide-icon">📊</div>
+                        <h3>사용 내역 확인</h3>
+                        <p>마이페이지 > 포인트 내역에서 충전/사용 내역을 자세히 확인할 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 결제 완료 모달 -->
+    <div id="paymentSuccessModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon success">✅</div>
+            <h2>충전 완료!</h2>
+            <p>별 포인트가 충전되었습니다.</p>
+            <div class="charged-info">
+                <p><strong id="chargedStars">0</strong>개의 별이 추가되었습니다</p>
+                <p>현재 보유: <strong id="newBalance">0</strong>개</p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-outline" onclick="closeModal()">확인</button>
+                <button class="btn btn-primary" onclick="location.href='community.html'">Q&A 바로가기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌉 CareerBridge</h3>
+                    <p>직장 생활, 미리 경험해보세요</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul>
+                        <li><a href="programs.html">체험 프로그램</a></li>
+                        <li><a href="companies.html">기업 정보</a></li>
+                        <li><a href="community.html">커뮤니티</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="support.html">공지사항</a></li>
+                        <li><a href="support.html">FAQ</a></li>
+                        <li><a href="support.html">1:1 문의</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>회사 정보</h4>
+                    <p>대표: OOO<br>
+                    이메일: contact@careerbridge.com<br>
+                    전화: 02-1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CareerBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/points.js"></script>
+</body>
+</html>

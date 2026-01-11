@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerBridge - 직장 생활, 미리 경험해보세요</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1><img src="images/logo.svg" alt="CareerBridge" class="logo-img"> CareerBridge</h1>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <a href="programs.html">체험 프로그램</a>
+                    <a href="companies.html">기업 정보</a>
+                    <a href="community.html">커뮤니티</a>
+                    <a href="support.html">고객센터</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-outline" onclick="location.href='login.html'">로그인</button>
+                    <button class="btn btn-primary" onclick="location.href='signup.html'">회원가입</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">직장 생활, 미리 경험해보세요!</h2>
+                <p class="hero-subtitle">
+                    1-2일 기업 체험으로 취업 의지를 높이고<br>
+                    인턴십으로 연결되는 기회를 잡으세요
+                </p>
+                <div class="search-box">
+                    <input type="text" placeholder="기업명, 직무, 지역을 검색하세요" class="search-input">
+                    <button class="btn btn-search">🔍 검색</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">1,234</div>
+                        <div class="stat-label">체험 프로그램</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">89%</div>
+                        <div class="stat-label">만족도</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">456</div>
+                        <div class="stat-label">인턴 전환 성공</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 이번 주 신규 프로그램 -->
+    <section class="programs-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>💡 이번 주 신규 체험 프로그램</h2>
+                <a href="programs.html" class="view-all">전체보기 →</a>
+            </div>
+
+            <div class="program-grid">
+                <!-- 프로그램 카드 1 -->
+                <div class="program-card" onclick="location.href='program-detail.html'">
+                    <div class="program-badge new">NEW</div>
+                    <div class="program-badge urgent">마감임박</div>
+                    <div class="company-logo">
+                        <div class="logo-placeholder" style="background: #FFEB00;">카카오</div>
+                    </div>
+                    <h3 class="program-title">[카카오모빌리티] 서비스 기획 1일 체험</h3>
+                    <p class="program-desc">
+                        실제 서비스 기획 프로세스를 체험하고 현직 PM과 함께 미니 프로젝트를 진행합니다.
+                    </p>
+                    <div class="program-info">
+                        <div class="info-item">
+                            <span class="icon">📅</span>
+                            <span>2월 15일(토)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">⏰</span>
+                            <span>10:00-17:00</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">📍</span>
+                            <span>판교</span>
+                        </div>
+                    </div>
+                    <div class="program-footer">
+                        <div class="participants">
+                            <span class="icon">👥</span>
+                            <span class="count">5/20명</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 25%"></div>
+                            </div>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">🎁 무료</span>
+                            <span class="tag">🚀 인턴 전환</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-apply" onclick="event.stopPropagation(); location.href='application.html'">신청하기</button>
+                </div>
+
+                <!-- 프로그램 카드 2 -->
+                <div class="program-card">
+                    <div class="program-badge new">NEW</div>
+                    <div class="company-logo">
+                        <div class="logo-placeholder" style="background: #00C73C;">배민</div>
+                    </div>
+                    <h3 class="program-title">[배달의민족] 마케팅 기획 1일 체험</h3>
+                    <p class="program-desc">
+                        데이터 기반 마케팅 캠페인 기획 과정을 배우고 실전 프로젝트를 수행합니다.
+                    </p>
+                    <div class="program-info">
+                        <div class="info-item">
+                            <span class="icon">📅</span>
+                            <span>2월 18일(화)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">⏰</span>
+                            <span>10:00-18:00</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">📍</span>
+                            <span>송파구</span>
+                        </div>
+                    </div>
+                    <div class="program-footer">
+                        <div class="participants">
+                            <span class="icon">👥</span>
+                            <span class="count">3/15명</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 20%"></div>
+                            </div>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">🎁 무료</span>
+                            <span class="tag">🚀 인턴 전환</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-apply">신청하기</button>
+                </div>
+
+                <!-- 프로그램 카드 3 -->
+                <div class="program-card">
+                    <div class="company-logo">
+                        <div class="logo-placeholder" style="background: #5F0080;">쿠팡</div>
+                    </div>
+                    <h3 class="program-title">[쿠팡] 물류 시스템 운영 2일 체험</h3>
+                    <p class="program-desc">
+                        대규모 물류 시스템의 운영 과정을 체험하고 효율화 방안을 제안합니다.
+                    </p>
+                    <div class="program-info">
+                        <div class="info-item">
+                            <span class="icon">📅</span>
+                            <span>2월 20-21일</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">⏰</span>
+                            <span>09:00-18:00</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">📍</span>
+                            <span>김포</span>
+                        </div>
+                    </div>
+                    <div class="program-footer">
+                        <div class="participants">
+                            <span class="icon">👥</span>
+                            <span class="count">8/30명</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 27%"></div>
+                            </div>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">🎁 무료</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-apply">신청하기</button>
+                </div>
+
+                <!-- 프로그램 카드 4 -->
+                <div class="program-card">
+                    <div class="company-logo">
+                        <div class="logo-placeholder" style="background: #0064FF;">토스</div>
+                    </div>
+                    <h3 class="program-title">[토스] 금융 서비스 개발 1일 체험</h3>
+                    <p class="program-desc">
+                        핀테크 서비스 개발 과정을 배우고 간단한 기능을 직접 구현해봅니다.
+                    </p>
+                    <div class="program-info">
+                        <div class="info-item">
+                            <span class="icon">📅</span>
+                            <span>2월 22일(토)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">⏰</span>
+                            <span>10:00-17:00</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">📍</span>
+                            <span>강남구</span>
+                        </div>
+                    </div>
+                    <div class="program-footer">
+                        <div class="participants">
+                            <span class="icon">👥</span>
+                            <span class="count">12/25명</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 48%"></div>
+                            </div>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">🎁 무료</span>
+                            <span class="tag">🚀 인턴 전환</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-apply">신청하기</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 왜 CareerBridge인가 -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">📊 왜 CareerBridge인가요?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>실제 업무 체험</h3>
+                    <p>단순 회사 견학이 아닌 실제 업무 프로세스를 경험하고 프로젝트에 참여합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>현직자 멘토링</h3>
+                    <p>현직자와 1:1로 멘토링을 받고 실무 노하우와 커리어 조언을 얻을 수 있습니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>인턴십 전환 기회</h3>
+                    <p>우수 참가자는 인턴십 제안을 받고 정규직 전환까지 이어질 수 있습니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>경력 인증서 발급</h3>
+                    <p>참여 완료 시 공식 인증서를 발급받아 이력서에 기재할 수 있습니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>취업 동기부여</h3>
+                    <p>직장 생활을 미리 경험하며 자신의 적성과 진로를 명확히 파악할 수 있습니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>네트워킹</h3>
+                    <p>같은 꿈을 가진 참가자들과 현직자들의 인맥을 형성할 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 성공 스토리 -->
+    <section class="success-section">
+        <div class="container">
+            <h2 class="section-title">🏆 성공 스토리</h2>
+            <div class="success-grid">
+                <div class="success-card">
+                    <div class="success-quote">"</div>
+                    <p class="success-text">
+                        카카오 1일 체험 후 3개월 인턴십을 거쳐 정규직으로 입사했습니다!
+                        체험 프로그램에서 보여준 열정과 아이디어가 인정받았어요.
+                    </p>
+                    <div class="success-author">
+                        <div class="author-avatar">김</div>
+                        <div class="author-info">
+                            <div class="author-name">김OO (25세)</div>
+                            <div class="author-position">카카오 서비스기획팀</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="success-card">
+                    <div class="success-quote">"</div>
+                    <p class="success-text">
+                        배민 마케팅 체험을 통해 실무가 어떤 건지 감을 잡았어요.
+                        이후 다른 회사 면접에서도 이 경험을 어필해서 합격했습니다!
+                    </p>
+                    <div class="success-author">
+                        <div class="author-avatar">이</div>
+                        <div class="author-info">
+                            <div class="author-name">이OO (23세)</div>
+                            <div class="author-position">쿠팡 마케팅팀</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="success-card">
+                    <div class="success-quote">"</div>
+                    <p class="success-text">
+                        단 1일이었지만 현직자들과 대화하며 업계 트렌드를 파악할 수 있었고,
+                        제가 정말 이 일을 하고 싶다는 확신이 들었습니다.
+                    </p>
+                    <div class="success-author">
+                        <div class="author-avatar">박</div>
+                        <div class="author-info">
+                            <div class="author-name">박OO (26세)</div>
+                            <div class="author-position">토스 개발팀</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 참여 기업 -->
+    <section class="companies-section">
+        <div class="container">
+            <h2 class="section-title">🏢 참여 기업</h2>
+            <div class="companies-grid">
+                <div class="company-item">카카오</div>
+                <div class="company-item">네이버</div>
+                <div class="company-item">배달의민족</div>
+                <div class="company-item">쿠팡</div>
+                <div class="company-item">토스</div>
+                <div class="company-item">라인</div>
+                <div class="company-item">당근마켓</div>
+                <div class="company-item">야놀자</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 포인트 충전 섹션 -->
+    <section class="points-charge-section">
+        <div class="container">
+            <div class="points-charge-header">
+                <h2 class="section-title">⭐ 별 포인트 충전</h2>
+                <p class="section-subtitle">Q&A 게시판에서 기업에게 직접 질문할 수 있는 별 포인트를 충전하세요</p>
+            </div>
+
+            <div class="points-packages-home">
+                <!-- 패키지 1 -->
+                <div class="package-card-home" onclick="location.href='points.html'">
+                    <div class="package-stars-home">⭐ 100개</div>
+                    <div class="package-price-home">10,000원</div>
+                    <div class="package-features-home">
+                        <p>✓ Q&A 질문 20회</p>
+                        <p>✓ 7일 환불 보장</p>
+                    </div>
+                </div>
+
+                <!-- 패키지 2 -->
+                <div class="package-card-home popular" onclick="location.href='points.html'">
+                    <div class="package-badge-home">인기</div>
+                    <div class="package-stars-home">⭐ 330개</div>
+                    <div class="package-bonus-home">+30개 보너스</div>
+                    <div class="package-price-home">30,000원</div>
+                    <div class="package-features-home">
+                        <p>✓ Q&A 질문 66회</p>
+                        <p>✓ 10% 추가 증정</p>
+                        <p>✓ 7일 환불 보장</p>
+                    </div>
+                </div>
+
+                <!-- 패키지 3 -->
+                <div class="package-card-home best" onclick="location.href='points.html'">
+                    <div class="package-badge-home best">BEST</div>
+                    <div class="package-stars-home">⭐ 600개</div>
+                    <div class="package-bonus-home">+100개 보너스</div>
+                    <div class="package-price-home">50,000원</div>
+                    <div class="package-features-home">
+                        <p>✓ Q&A 질문 120회</p>
+                        <p>✓ 20% 추가 증정</p>
+                        <p>✓ 7일 환불 보장</p>
+                    </div>
+                </div>
+
+                <!-- 패키지 4 -->
+                <div class="package-card-home premium" onclick="location.href='points.html'">
+                    <div class="package-badge-home premium">PREMIUM</div>
+                    <div class="package-stars-home">⭐ 1,300개</div>
+                    <div class="package-bonus-home">+300개 보너스</div>
+                    <div class="package-price-home">100,000원</div>
+                    <div class="package-features-home">
+                        <p>✓ Q&A 질문 260회</p>
+                        <p>✓ 30% 추가 증정</p>
+                        <p>✓ 30일 환불 보장</p>
+                        <p>✓ VIP 혜택</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="points-info-box">
+                <div class="info-item">
+                    <div class="info-icon">💬</div>
+                    <div class="info-text">
+                        <h4>Q&A 질문하기</h4>
+                        <p>질문 1회당 별 5개 사용</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">⏰</div>
+                    <div class="info-text">
+                        <h4>자동 환불 시스템</h4>
+                        <p>7일 내 미답변 시 별 환불</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🔄</div>
+                    <div class="info-text">
+                        <h4>포인트 환불</h4>
+                        <p>충전 후 7일 이내 100% 환불</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="points-cta">
+                <button class="btn btn-primary btn-large" onclick="location.href='points.html'">
+                    포인트 충전하러 가기 →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 섹션 -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>지금 바로 시작하세요!</h2>
+                <p>1,234개의 체험 프로그램이 당신을 기다리고 있습니다</p>
+                <button class="btn btn-cta" onclick="location.href='programs.html'">
+                    체험 프로그램 둘러보기 →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌉 CareerBridge</h3>
+                    <p>직장 생활, 미리 경험해보세요</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul>
+                        <li><a href="programs.html">체험 프로그램</a></li>
+                        <li><a href="#">기업 정보</a></li>
+                        <li><a href="#">커뮤니티</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">1:1 문의</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>회사 정보</h4>
+                    <p>대표: OOO<br>
+                    이메일: contact@careerbridge.com<br>
+                    전화: 02-1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CareerBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
